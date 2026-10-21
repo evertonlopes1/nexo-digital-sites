@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essência Premium — Perfumes Importados e Nacionais</title>
+<meta name="description" content="Revenda de perfumes das melhores marcas. Originais, com entrega rápida e garantia de qualidade.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #fcfcfb;
+    --primaria: #1a1a1a;
+    --dourado: #c6a87c;
+    --dourado-hover: #b39568;
+    --texto: #333333;
+    --texto-muted: #777777;
+    --branco: #ffffff;
+    --verde: #25d366;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--texto); overflow-x: hidden; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primaria); font-weight: 600; }
+
+  /* NAVBAR */
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(252,252,251,.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,.05); }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primaria); letter-spacing: 1px; }
+  .logo span { color: var(--dourado); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { font-size: .9rem; font-weight: 500; color: var(--texto); text-transform: uppercase; letter-spacing: 1px; font-size: .8rem; transition: color .3s; }
+  .nav-links a:hover { color: var(--dourado); }
+  .nav-icons { display: flex; align-items: center; gap: 20px; }
+  .cart-icon { font-size: 1.2rem; cursor: pointer; position: relative; }
+  .cart-count { position: absolute; top: -8px; right: -10px; background: var(--dourado); color: white; font-size: .6rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .menu-btn { display: none; background: none; border: none; color: var(--primaria); font-size: 1.5rem; cursor: pointer; }
+
+  /* HERO */
+  .hero { height: 70vh; min-height: 500px; background: linear-gradient(rgba(252,252,251,.7), rgba(252,252,251,.9)), url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1600') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5%; }
+  .hero-content { max-width: 700px; animation: fadeUp 1s ease both; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+  .hero p { color: var(--texto-muted); font-size: 1.1rem; margin-bottom: 35px; }
+  .btn { padding: 16px 36px; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+  .btn-primario { background: var(--primaria); color: white; }
+  .btn-primario:hover { background: #000; transform: translateY(-3px); }
+  .btn-dourado { background: var(--dourado); color: white; }
+  .btn-dourado:hover { background: var(--dourado-hover); transform: translateY(-3px); }
+
+  /* SEÇÕES */
+  section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 10px; }
+  .section-head p { color: var(--texto-muted); font-size: 1rem; }
+  .divider { width: 50px; height: 2px; background: var(--dourado); margin: 15px auto 0; }
+
+  /* ABAS DE MARCAS */
+  .tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+  .tab-btn { background: transparent; border: 1px solid #e0e0e0; padding: 10px 24px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 500; color: var(--texto-muted); cursor: pointer; transition: all .3s; }
+  .tab-btn:hover { border-color: var(--dourado); color: var(--dourado); }
+  .tab-btn.active { background: var(--primaria); border-color: var(--primaria); color: white; }
+
+  /* PRODUTOS */
+  .produtos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+  .produto { background: var(--branco); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,.03); transition: all .3s; border: 1px solid #f0f0f0; display: flex; flex-direction: column; }
+  .produto:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,.08); border-color: var(--dourado); }
+  .produto-img { height: 250px; background-size: cover; background-position: center; position: relative; background-color: #fafafa; }
+  .produto-marca { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,.9); padding: 4px 12px; border-radius: 4px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primaria); }
+  .produto-info { padding: 20px; text-align: center; display: flex; flex-direction: column; flex: 1; }
+  .produto-info h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 5px; }
+  .produto-info .tamanho { color: var(--texto-muted); font-size: .8rem; margin-bottom: 15px; }
+  .produto-preco { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--primaria); margin-bottom: 15px; margin-top: auto; }
+  .produto-preco small { font-family: 'Inter', sans-serif; font-size: .75rem; color: var(--texto-muted); font-weight: 400; display: block; }
+  .produto .btn { width: 100%; padding: 12px; font-size: .8rem; background: transparent; border: 1px solid var(--primaria); color: var(--primaria); }
+  .produto .btn:hover { background: var(--primaria); color: white; }
+
+  /* DIFERENCIAIS */
+  .diferenciais-bg { background: #f5f2ed; padding: 60px 5%; margin-top: 50px; }
+  .diferenciais-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
+  .diferencial-item h4 { font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 5px; }
+  .diferencial-item p { color: var(--texto-muted); font-size: .85rem; }
+  .diferencial-icon { font-size: 1.8rem; color: var(--dourado); margin-bottom: 15px; }
+
+  /* FOOTER */
+  footer { background: var(--primaria); color: white; padding: 60px 5% 30px; text-align: center; }
+  footer .logo { color: white; margin-bottom: 20px; display: inline-block; }
+  footer p { color: #a0a0a0; font-size: .9rem; margin-bottom: 20px; }
+  .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
+  .footer-links a { color: #d0d0d0; font-size: .9rem; transition: color .3s; }
+  .footer-links a:hover { color: var(--dourado); }
+  .copy { color: #666; font-size: .8rem; border-top: 1px solid #333; padding-top: 20px; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 5px 25px rgba(37,211,102,.4); z-index: 999; transition: transform .3s; animation: pulse 2s infinite; }
+  .wpp:hover { transform: scale(1.1); }
+  @keyframes pulse { 0% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } 50% { box-shadow: 0 5px 30px rgba(37,211,102,.7); } 100% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .nav-links { display: none; } .menu-btn { display: block; }
+    section { padding: 60px 5%; }
+    .produtos-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .produto-img { height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Essência <span>Premium</span></div>
+  <ul class="nav-links">
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-icons">
+    <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+    <button class="menu-btn">☰</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>Sua fragrância favorita, com o melhor preço.</h1>
+    <p>Perfumes importados e nacionais 100% originais. Entrega rápida e segura para todo o Brasil.</p>
+    <a href="#marcas" class="btn btn-primario">Ver Coleção</a>
+  </div>
+</header>
+
+<section id="marcas">
+  <div class="section-head">
+    <h2>Nossas Marcas</h2>
+    <p>Selecione a marca e encontre o perfume perfeito para você.</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Filtro de Abas -->
+  <div class="tabs">
+    <button class="tab-btn active" data-filter="all">Todas</button>
+    <button class="tab-btn" data-filter="chanel">Chanel</button>
+    <button class="tab-btn" data-filter="dior">Dior</button>
+    <button class="tab-btn" data-filter="natura">Natura</button>
+    <button class="tab-btn" data-filter="boticario">O Boticário</button>
+  </div>
+
+  <!-- Grid de Produtos -->
+  <div class="produtos-grid">
+    
+    <!-- Produto 1: Chanel -->
+    <div class="produto" data-brand="chanel">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=600');">
+        <span class="produto-marca">Chanel</span>
+      </div>
+      <div class="produto-info">
+        <h3>Chanel N°5</h3>
+        <span class="tamanho">100ml - Eau de Parfum</span>
+        <div class="produto-preco">R$ 750,00 <small>ou 3x de R$ 250,00</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20Chanel%20N%C2%B05" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+    <!-- Produto 2: Dior -->
+    <div class="produto" data-brand="dior">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600');">
+        <span class="produto-marca">Dior</span>
+      </div>
+      <div class="produto-info">
+        <h3>Sauvage Dior</h3>
+        <span class="tamanho">100ml - Eau de Toilette</span>
+        <div class="produto-preco">R$ 620,00 <small>ou 3x de R$ 206,66</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20Sauvage%20Dior" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+    <!-- Produto 3: Natura -->
+    <div class="produto" data-brand="natura">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=600');">
+        <span class="produto-marca">Natura</span>
+      </div>
+      <div class="produto-info">
+        <h3>Kaiak Urbe</h3>
+        <span class="tamanho">100ml - Desodorante Colônia</span>
+        <div class="produto-preco">R$ 129,90 <small>ou 2x de R$ 64,95</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20Kaiak%20Urbe" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+    <!-- Produto 4: O Boticário -->
+    <div class="produto" data-brand="boticario">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600');">
+        <span class="produto-marca">O Boticário</span>
+      </div>
+      <div class="produto-info">
+        <h3>Malbec Bleu</h3>
+        <span class="tamanho">100ml - Desodorante Colônia</span>
+        <div class="produto-preco">R$ 189,90 <small>ou 3x de R$ 63,30</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20Malbec%20Bleu" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+    <!-- Produto 5: Chanel -->
+    <div class="produto" data-brand="chanel">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1585218356057-dc5003ea2f1d?w=600');">
+        <span class="produto-marca">Chanel</span>
+      </div>
+      <div class="produto-info">
+        <h3>Bleu de Chanel</h3>
+        <span class="tamanho">100ml - Eau de Parfum</span>
+        <div class="produto-preco">R$ 780,00 <small>ou 3x de R$ 260,00</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20Bleu%20de%20Chanel" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+    <!-- Produto 6: Dior -->
+    <div class="produto" data-brand="dior">
+      <div class="produto-img" style="background-image: url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600');">
+        <span class="produto-marca">Dior</span>
+      </div>
+      <div class="produto-info">
+        <h3>J'adore Dior</h3>
+        <span class="tamanho">100ml - Eau de Parfum</span>
+        <div class="produto-preco">R$ 680,00 <small>ou 3x de R$ 226,66</small></div>
+        <a href="https://wa.me/5591982201099?text=Quero%20comprar%20o%20J'adore%20Dior" class="btn" target="_blank">Comprar</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="diferenciais-bg">
+  <div class="diferenciais-grid">
+    <div class="diferencial-item">
+      <div class="diferencial-icon">✨</div>
+      <h4>100% Originais</h4>
+      <p>Produtos com selo de garantia e nota fiscal.</p>
+    </div>
+    <div class="diferencial-item">
+      <div class="diferencial-icon">🚚</div>
+      <h4>Envio Rápido</h4>
+      <p>Postagem em até 24h úteis após confirmação.</p>
+    </div>
+    <div class="diferencial-item">
+      <div class="diferencial-icon">💳</div>
+      <h4>Parcele no Cartão</h4>
+      <p>Em até 6x sem juros ou 5% de desconto no Pix.</p>
+    </div>
+    <div class="diferencial-item">
+      <div class="diferencial-icon">🎁</div>
+      <h4>Embalagem Presente</h4>
+      <p>Enviamos com embalagem especial para presente.</p>
+    </div>
+  </div>
+</div>
+
+<footer id="contato">
+  <div class="logo">Essência <span>Premium</span></div>
+  <p>Revenda autorizada de perfumes de luxo.</p>
+  <div class="footer-links">
+    <a href="#marcas">Marcas</a>
+    <a href="https://wa.me/5591982201099" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </div>
+  <div class="copy">© 2025 Essência Premium. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="wpp" target="_blank" aria-label="WhatsApp">✆</a>
+
+<script>
+  // Menu Mobile
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', () => {
+    if(navLinks.style.display === 'flex') { navLinks.style.display = 'none'; } 
+    else {
+      navLinks.style.display = 'flex'; navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute'; navLinks.style.top = '70px';
+      navLinks.style.left = '0'; navLinks.style.width = '100%';
+      navLinks.style.background = 'white'; navLinks.style.padding = '20px';
+      navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,.1)';
+    }
+  });
+
+  // LÓGICA DAS ABAS DE MARCAS (Filtro)
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const produtos = document.querySelectorAll('.produto');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove a classe 'active' de todos os botões
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      // Adiciona a classe 'active' apenas no botão clicado
+      button.classList.add('active');
+
+      const filterValue = button.getAttribute('data-filter');
+
+      // Lógica para mostrar ou esconder os produtos
+      produtos.forEach(produto => {
+        const brand = produto.getAttribute('data-brand');
+        
+        if (filterValue === 'all' || filterValue === brand) {
+          produto.style.display = 'flex';
+          // Pequena animação de fade-in
+          produto.style.animation = 'none';
+          produto.offsetHeight; /* trigger reflow */
+          produto.style.animation = 'fadeUp 0.5s ease forwards'; 
+        } else {
+          produto.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

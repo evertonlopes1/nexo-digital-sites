@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garantia de Rodas — Pneus e Serviços Automotivos</title>
+<meta name="description" content="Pneus de alta qualidade, alinhamento, balanceamento e serviços automotivos. Orçamento rápido pelo WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primaria: #ea580c; /* Laranja industrial */
+    --primaria-hover: #c2410c;
+    --texto: #f8fafc;
+    --texto-muted: #94a3b8;
+    --verde: #25d366;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--texto); overflow-x: hidden; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NAVBAR */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,23,42,.9); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .logo { font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -1px; }
+  .logo span { color: var(--primaria); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { font-size: .9rem; font-weight: 600; color: var(--texto-muted); transition: color .3s; }
+  .nav-links a:hover { color: var(--texto); }
+  .btn-nav { background: var(--primaria); color: white; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: .9rem; transition: all .3s; }
+  .btn-nav:hover { background: var(--primaria-hover); transform: translateY(-2px); }
+  .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; }
+
+  /* HERO */
+  .hero {
+    height: 100vh; min-height: 600px;
+    background: linear-gradient(rgba(15,23,42,.85), rgba(15,23,42,.95)), url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=1600') center/cover;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 0 5%; position: relative;
+  }
+  .hero-content { max-width: 700px; animation: fadeUp 1s ease both; }
+  .hero-badge { display: inline-block; background: rgba(234,88,12,.2); border: 1px solid var(--primaria); color: #fdba74; padding: 6px 16px; border-radius: 4px; font-size: .8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -2px; }
+  .hero h1 span { color: var(--primaria); }
+  .hero p { color: var(--texto-muted); font-size: 1.1rem; margin-bottom: 35px; font-weight: 500; max-width: 500px; }
+  .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+  .btn { padding: 16px 32px; border-radius: 6px; font-weight: 700; font-size: 1rem; transition: all .3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .btn-primario { background: var(--primaria); color: white; box-shadow: 0 4px 15px rgba(234,88,12,.4); }
+  .btn-primario:hover { background: var(--primaria-hover); transform: translateY(-3px); }
+  .btn-secundario { background: transparent; color: var(--texto); border: 2px solid var(--texto-muted); }
+  .btn-secundario:hover { border-color: var(--texto); background: rgba(255,255,255,.05); }
+
+  /* SEÇÕES */
+  section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 60px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
+  .section-head p { color: var(--texto-muted); font-size: 1.1rem; }
+  .divider { width: 60px; height: 4px; background: var(--primaria); margin: 20px auto 0; }
+
+  /* SERVIÇOS */
+  .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .servico { background: var(--card); padding: 40px 30px; border-radius: 8px; border-left: 4px solid var(--primaria); transition: all .3s; }
+  .servico:hover { transform: translateX(5px); background: #24334a; }
+  .servico-icon { font-size: 2.5rem; margin-bottom: 20px; }
+  .servico h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+  .servico p { color: var(--texto-muted); font-size: .95rem; font-weight: 500; }
+
+  /* GALERIA / SLIDER */
+  .slider { max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+  .slides { display: flex; transition: transform .8s cubic-bezier(.77,0,.18,1); }
+  .slide { min-width: 100%; height: 500px; background-size: cover; background-position: center; position: relative; }
+  .slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,.95) 0%, transparent 60%); }
+  .slide-caption { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
+  .slide-caption h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 5px; }
+  .slide-caption p { color: var(--primaria); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: .9rem; }
+  .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; background: rgba(15,23,42,.8); border: 2px solid var(--primaria); color: var(--primaria); font-size: 1.5rem; cursor: pointer; z-index: 5; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+  .slider-btn:hover { background: var(--primaria); color: white; }
+  .slider-btn.prev { left: 20px; }
+  .slider-btn.next { right: 20px; }
+  .dots-nav { position: absolute; bottom: 20px; right: 40px; display: flex; gap: 10px; z-index: 5; }
+  .dots-nav button { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.3); border: none; cursor: pointer; transition: all .3s; padding: 0; }
+  .dots-nav button.active { background: var(--primaria); transform: scale(1.2); }
+
+  /* CONTATO / ORÇAMENTO */
+  .contato-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--card); padding: 60px; border-radius: 12px; }
+  .contato-info h3 { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+  .contato-info p { color: var(--texto-muted); margin-bottom: 30px; }
+  .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-weight: 600; }
+  .info-item span { font-size: 1.5rem; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: .8rem; font-weight: 700; text-transform: uppercase; color: var(--primaria); margin-bottom: 8px; }
+  .form-group input, .form-group select { width: 100%; padding: 15px; background: var(--bg); border: 1px solid rgba(255,255,255,.1); color: white; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primaria); }
+  .contato-form .btn { width: 100%; justify-content: center; margin-top: 10px; }
+
+  /* FOOTER */
+  footer { background: #0b1120; padding: 60px 5% 30px; border-top: 1px solid rgba(255,255,255,.05); text-align: center; }
+  footer p { color: var(--texto-muted); font-size: .9rem; margin-top: 10px; }
+  .copy { margin-top: 40px; font-size: .8rem; color: #475569; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 25px rgba(37,211,102,.5); z-index: 999; transition: transform .3s; animation: pulse 2s infinite; }
+  .wpp:hover { transform: scale(1.1); }
+  @keyframes pulse { 0% { box-shadow: 0 5px 25px rgba(37,211,102,.5); } 50% { box-shadow: 0 5px 35px rgba(37,211,102,.8); } 100% { box-shadow: 0 5px 25px rgba(37,211,102,.5); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .btn-nav { display: none; }
+    .menu-btn { display: block; }
+    .hero { align-items: center; text-align: center; }
+    .hero-btns { justify-content: center; }
+    .contato-wrap { grid-template-columns: 1fr; padding: 30px; }
+    .slide { height: 350px; }
+    .slide-caption { left: 20px; bottom: 30px; }
+    section { padding: 70px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Garantia de <span>Rodas</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#contato">Orçamento</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Oi!%20Preciso%20de%20um%20or%C3%A7amento%20de%20pneus." class="btn-nav" target="_blank">Pedir Orçamento</a>
+  <button class="menu-btn">☰</button>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🏁 Especialistas em Pneus</div>
+    <h1>Seu carro pronto para <br><span>qualquer estrada</span></h1>
+    <p>Pneus das melhores marcas, alinhamento, balanceamento e serviços automotivos com garantia e preço justo.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20um%20or%C3%A7amento." class="btn btn-primario" target="_blank">WhatsApp</a>
+      <a href="#servicos" class="btn btn-secundario">Ver Serviços</a>
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="section-head">
+    <h2>Nossos Serviços</h2>
+    <p>Tudo o que o seu carro precisa em um só lugar.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico">
+      <div class="servico-icon">🛞</div>
+      <h4>Troca de Pneus</h4>
+      <p>As melhores marcas do mercado com preço competitivo e garantia de fábrica.</p>
+    </div>
+    <div class="servico">
+      <div class="servico-icon">⚙️</div>
+      <h4>Alinhamento</h4>
+      <p>Alinhamento 3D de precisão para garantir a durabilidade dos seus pneus.</p>
+    </div>
+    <div class="servico">
+      <div class="servico-icon">⚖️</div>
+      <h4>Balanceamento</h4>
+      <p>Equilíbrio perfeito para uma direção mais segura e confortável.</p>
+    </div>
+    <div class="servico">
+      <div class="servico-icon">🛠️</div>
+      <h4>Suspensão</h4>
+      <p>Diagnóstico e reparo completo do sistema de suspensão do seu veículo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="section-head">
+    <h2>Nossa Estrutura</h2>
+    <p>Equipamentos modernos e equipe especializada.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="slider" id="slider">
+    <div class="slides" id="slides">
+      <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=1600')">
+        <div class="slide-caption">
+          <h3>Loja de Pneus</h3>
+          <p>Variedade e Qualidade</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1600')">
+        <div class="slide-caption">
+          <h3>Oficina Especializada</h3>
+          <p>Equipe Treinada</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600')">
+        <div class="slide-caption">
+          <h3>Serviços Automotivos</h3>
+          <p>Agilidade e Confiança</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn prev" id="prevBtn">‹</button>
+    <button class="slider-btn next" id="nextBtn">›</button>
+    <div class="dots-nav" id="dotsNav"></div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="contato-wrap">
+    <div class="contato-info">
+      <h3>Peça seu Orçamento</h3>
+      <p>Preencha o formulário ao lado ou chame no WhatsApp. Respondemos em minutos!</p>
+      <div class="info-item"><span>📍</span> Av. Principal, 1000 — Centro</div>
+      <div class="info-item"><span>📞</span> (91) 98220-1099</div>
+      <div class="info-item"><span>🕐</span> Seg a Sex: 8h às 18h | Sáb: 8h às 12h</div>
+    </div>
+    <form class="contato-form" id="formOrcamento">
+      <div class="form-group">
+        <label>Seu Nome</label>
+        <input type="text" placeholder="João da Silva" required>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp</label>
+        <input type="tel" placeholder="(91) 99999-9999" required>
+      </div>
+      <div class="form-group">
+        <label>O que você precisa?</label>
+        <select required>
+          <option value="">Selecione...</option>
+          <option>Pneus</option>
+          <option>Alinhamento</option>
+          <option>Balanceamento</option>
+          <option>Suspensão</option>
+          <option>Outros</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primario">Enviar no WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Garantia de <span>Rodas</span></div>
+  <p>Segurança e performance para o seu veículo.</p>
+  <div class="copy">© 2025 Garantia de Rodas. Todos os direitos reservados.</div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Oi!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." class="wpp" target="_blank">✆</a>
+
+<script>
+  // Menu Mobile
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', () => {
+    if(navLinks.style.display === 'flex') { navLinks.style.display = 'none'; } 
+    else {
+      navLinks.style.display = 'flex'; navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute'; navLinks.style.top = '70px';
+      navLinks.style.left = '0'; navLinks.style.width = '100%';
+      navLinks.style.background = '#1e293b'; navLinks.style.padding = '20px';
+    }
+  });
+
+  // Formulário enviando pro WhatsApp
+  document.getElementById('formOrcamento').addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = e.target.querySelectorAll('input')[0].value;
+    const fone = e.target.querySelectorAll('input')[1].value;
+    const servico = e.target.querySelector('select').value;
+    const msg = `Olá! Meu nome é ${nome}. Meu telefone é ${fone}. Preciso de um orçamento para: ${servico}.`;
+    window.open(`https://wa.me/5591982201099?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  // SLIDER AUTOMÁTICO
+  (function() {
+    const slider = document.getElementById('slider');
+    const slides = document.getElementById('slides');
+    const allSlides = document.querySelectorAll('.slide');
+    const dotsNav = document.getElementById('dotsNav');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let current = 0; const total = allSlides.length;
+    allSlides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.addEventListener('click', () => goTo(i)); dotsNav.appendChild(btn);
+    });
+    const dots = dotsNav.querySelectorAll('button');
+
+    function updateUI() {
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      allSlides.forEach((s, i) => s.classList.toggle('active', i === current));
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+    function goTo(index) { current = (index + total) % total; updateUI(); resetTimer(); }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    let timer;
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 4000); // Passa a cada 4 segundos
+    }
+
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+    slider.addEventListener('mouseenter', () => clearInterval(timer));
+    slider.addEventListener('mouseleave', resetTimer);
+
+    updateUI(); resetTimer();
+  })();
+</script>
+</body>
+</html>
