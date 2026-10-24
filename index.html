@@ -18,7 +18,7 @@
   a { text-decoration: none; color: inherit; }
   
   /* NAVBAR */
-  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); }
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.05); }
   .logo { font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
   .logo span { background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .nav-links { display: flex; gap: 30px; list-style: none; }
@@ -29,8 +29,8 @@
   .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; }
 
   /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at top, rgba(139,92,246,.28), transparent 35%); }
-  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.3); color: #c4b5fd; border-radius: 50px; font-size: .8rem; font-weight: 600; margin-bottom: 18px; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at top, rgba(139,92,246,.15), transparent 40%); }
+  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.3); color: #c4b5fd; border-radius: 50px; font-size: .8rem; font-weight: 600; margin-bottom: 25px; animation: fadeUp 1s ease both; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; max-width: 900px; margin-bottom: 25px; letter-spacing: -1px; animation: fadeUp 1s ease .2s both; }
   .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero p { color: var(--texto-muted); font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; animation: fadeUp 1s ease .3s both; }
@@ -102,7 +102,7 @@
   .footer-links a { color: var(--texto-muted); font-size: .9rem; transition: color .3s; }
   .footer-links a:hover { color: var(--texto); }
   .copy { color: #52525b; font-size: .8rem; }
-  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 25px rgba(37,211,102,.4); animation: pulse 2s infinite; transition: transform .3s; }
+  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 5px 25px rgba(37,211,102,.4); animation: pulse 2s infinite; }
   .wpp:hover { transform: scale(1.1); }
   @keyframes pulse { 0% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } 50% { box-shadow: 0 5px 30px rgba(37,211,102,.7); } 100% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -249,11 +249,23 @@
         </div>
       </div>
     </a>
+
+    <!-- Projeto 9: Madeira & Alma (Móveis) -->
+    <a href="moveis.html" target="_blank" class="port-item">
+      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800');"></div>
+      <div class="port-info">
+        <h4>Madeira &amp; Alma</h4>
+        <p>E-commerce e portfólio para ateliê de móveis artesanais. Foco em peças exclusivas e projetos sob medida.</p>
+        <div class="port-tags">
+          <span class="tag">Decoração</span>
+          <span class="tag">Artesanato</span>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 
-<!-- O restante do código (Serviços, Preços, FAQ, Footer) continua igual ao anterior... -->
-<!-- Para não ocupar espaço, estou mantendo igual, mas você pode copiar as seções abaixo do portfólio do código anterior. -->
+<!-- O restante do código (Serviços, Preços, FAQ, Footer) continua igual ao anterior-->
 <section id="servicos" style="background: #121214;">
   <div class="section-head">
     <h2>Por que escolher a Nexo?</h2>
@@ -292,7 +304,7 @@
       <div class="preco-valor">R$ 1.497<small>,00</small></div>
       <div class="preco-periodo">Pagamento único</div>
       <ul class="preco-lista">
-        <li>Tudo do Template Premium</li><li>Identidade visual exclusiva</li><li>Inserção das suas fotos e textos</li><li>Configuração de domínio e hospedagem</li><li>Otimização avançada de SEO</li>
+        <li>Tudo do Template Premium</li><li>Identidade visual exclusiva</li><li>Inserção das suas fotos e textos</li><li>Configuração de domínio e hospedagem</li><li>Otimização avançada de SEO e conversão</li>
       </ul>
       <a href="https://wa.me/5591988001020?text=Quero%20um%20Site%20Personalizado%20com%20a%20Nexo%20Digital" class="btn btn-primario" target="_blank">Quero este Plano</a>
     </div>
@@ -312,10 +324,10 @@
 <section id="faq" style="background: #121214;">
   <div class="section-head"><h2>Perguntas Frequentes</h2><p>Tire suas dúvidas antes de começar.</p><div class="divider"></div></div>
   <div class="faq-list">
-    <details class="faq-item"><summary>Eu preciso saber programar para usar o Template?</summary><div class="faq-content">Não! O template já vem pronto. Você só precisa de um computador para colocar seu texto e imagens.</div></details>
-    <details class="faq-item"><summary>Quanto custa manter o site no ar?</summary><div class="faq-content">Você vai precisar de um domínio (ex: seunegocio.com.br) que custa em média R$ 40 por ano, além do plano de hospedagem, que pode variar.</div></details>
-    <details class="faq-item"><summary>Quanto tempo demora para o site ficar pronto?</summary><div class="faq-content">Se você comprar um Template, o acesso é imediato. Se for um Site Personalizado, normalmente levamos de 3 a 10 dias úteis, dependendo da complexidade.</div></details>
-    <details class="faq-item"><summary>Vocês fazem manutenção depois da entrega?</summary><div class="faq-content">Sim! O Site Personalizado inclui 90 dias de suporte. Após esse período, você pode contratar manutenção mensal ou assistência pontual.</div></details>
+    <details class="faq-item"><summary>Eu preciso saber programar para usar o Template?</summary><div class="faq-content">Não! O template já vem pronto. Você só precisa de um computador para colocar seu conteúdo e configurar o envio.</div></details>
+    <details class="faq-item"><summary>Quanto custa manter o site no ar?</summary><div class="faq-content">Você vai precisar de um domínio (ex: seunegocio.com.br) que custa em média R$ 40 por ano, e hospedagem a partir de R$ 20/mês, dependendo da sua necessidade.</div></details>
+    <details class="faq-item"><summary>Quanto tempo demora para o site ficar pronto?</summary><div class="faq-content">Se você comprar um Template, o acesso é imediato. Se for um Site Personalizado, a entrega costuma ocorrer em 5 a 10 dias úteis após aprovação do conteúdo.</div></details>
+    <details class="faq-item"><summary>Vocês fazem manutenção depois da entrega?</summary><div class="faq-content">Sim! O Site Personalizado inclui 90 dias de suporte. Após esse período, você pode contratar um plano mensal ou pedir ajuda pontual.</div></details>
   </div>
 </section>
 
