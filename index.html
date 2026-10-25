@@ -48,12 +48,10 @@
   .section-head p { color: var(--texto-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
   .divider { width: 50px; height: 4px; background: var(--primaria); margin: 20px auto 0; border-radius: 2px; }
 
-  /* SOLUÇÕES (O que vendemos) */
+  /* SOLUÇÕES */
   .solucoes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
   .solucao { background: var(--card); padding: 40px 30px; border-radius: 16px; border: 1px solid var(--borda); transition: all .3s; position: relative; overflow: hidden; }
   .solucao:hover { border-color: var(--primaria); transform: translateY(-5px); }
-  .solucao::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--primaria), transparent); opacity: 0; transition: .3s; }
-  .solucao:hover::before { opacity: 1; }
   .solucao-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(139,92,246,.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
   .solucao h4 { font-size: 1.2rem; margin-bottom: 10px; }
   .solucao p { color: var(--texto-muted); font-size: .95rem; }
@@ -70,6 +68,22 @@
   .port-info p { color: var(--texto-muted); font-size: .9rem; margin-bottom: 15px; }
   .port-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .tag { font-size: .7rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; background: rgba(139,92,246,.1); color: #c4b5fd; }
+
+  /* COMO FUNCIONA (PROCESSO) */
+  .processo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; position: relative; }
+  .processo-item { text-align: center; position: relative; padding: 20px 10px; }
+  .processo-num { width: 50px; height: 50px; border-radius: 50%; background: var(--bg); border: 2px solid var(--primaria); color: var(--primaria); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; margin: 0 auto 20px auto; position: relative; z-index: 2; }
+  .processo-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
+  .processo-item p { color: var(--texto-muted); font-size: .85rem; }
+
+  /* AUTORIDADE / FOMO */
+  .autoridade-bg { background: linear-gradient(135deg, #18181b 0%, #09090b 100%); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+  .autoridade-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
+  .autoridade-wrap h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px; }
+  .autoridade-list { display: flex; flex-direction: column; gap: 15px; margin: 40px 0; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .autoridade-list li { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,.03); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,.05); }
+  .autoridade-list li span { color: #22c55e; font-size: 1.5rem; }
+  .autoridade-warning { font-size: 1.2rem; color: var(--texto-muted); font-weight: 500; }
 
   /* PREÇOS */
   .precos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
@@ -96,8 +110,16 @@
   .faq-item[open] summary::after { transform: rotate(45deg); }
   .faq-content { padding: 0 25px 25px; color: var(--texto-muted); font-size: .95rem; }
 
+  /* CTA FINAL AGRESSIVO */
+  .cta-final { background: var(--primaria); padding: 100px 5%; text-align: center; position: relative; overflow: hidden; }
+  .cta-final::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%); opacity: .5; }
+  .cta-final h2 { font-size: clamp(2rem, 5vw, 4rem); color: white; line-height: 1.2; margin-bottom: 20px; position: relative; z-index: 2; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .cta-final p { font-size: 1.3rem; color: #e4e4e7; margin-bottom: 40px; position: relative; z-index: 2; }
+  .btn-cta-final { background: white; color: var(--primaria); font-size: 1.2rem; padding: 20px 50px; font-weight: 800; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .btn-cta-final:hover { background: #f4f4f5; transform: translateY(-5px) scale(1.02); }
+
   /* FOOTER E WHATSAPP */
-  footer { border-top: 1px solid var(--borda); padding: 60px 5% 30px; text-align: center; }
+  footer { background: #09090b; border-top: 1px solid var(--borda); padding: 60px 5% 30px; text-align: center; }
   footer .logo { justify-content: center; margin-bottom: 20px; }
   footer p { color: var(--texto-muted); font-size: .9rem; margin-bottom: 20px; }
   .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
@@ -113,6 +135,7 @@
     .nav-links { display: none; } .btn-nav { display: none; } .menu-btn { display: block; }
     .hero p { font-size: 1rem; } .btn { width: 100%; justify-content: center; }
     .precos-grid { grid-template-columns: 1fr; } section { padding: 70px 5%; }
+    .processo-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -121,12 +144,7 @@
 <nav>
   <div class="logo">
     <svg width="35" height="35" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="neonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#d946ef" />
-          <stop offset="100%" stop-color="#8b5cf6" />
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id="neonGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d946ef" /><stop offset="100%" stop-color="#8b5cf6" /></linearGradient></defs>
       <circle cx="50" cy="50" r="48" fill="#09090b" stroke="url(#neonGrad)" stroke-width="4"/>
       <path d="M 30 75 V 35 Q 30 25 40 25 H 50 L 70 65 V 25 H 80 V 75 Q 80 85 70 85 H 60 L 40 45 V 75 Z" fill="url(#neonGrad)"/>
       <rect x="75" y="10" width="10" height="10" fill="#d946ef" />
@@ -137,8 +155,8 @@
   <ul class="nav-links">
     <li><a href="#solucoes">Soluções</a></li>
     <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#processo">Como Funciona</a></li>
     <li><a href="#precos">Planos</a></li>
-    <li><a href="#faq">Dúvidas</a></li>
   </ul>
   <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20transformar%20meu%20neg%C3%B3cio." class="btn-nav" target="_blank">Falar com Especialista</a>
   <button class="menu-btn">☰</button>
@@ -162,9 +180,15 @@
   </div>
   <div class="solucoes-grid">
     <div class="solucao"><div class="solucao-icon">🎯</div><h4>Landing Pages</h4><p>Páginas de alta conversão focadas em capturar leads e vender um produto específico.</p></div>
-    <div class="solucao"><div class="solucao-icon">🤖</div><h4>Assistentes de IA</h4><p>Atendentes virtuais no seu site ou WhatsApp que respondem clientes 24h por dia.</p></div>
+    
+    <!-- COPYWRITING AJUSTADO AQUI -->
+    <div class="solucao"><div class="solucao-icon">🤖</div><h4>Assistentes de IA</h4><p>Assistente de IA que responde clientes 24h e gera mais oportunidades de venda.</p></div>
+    
     <div class="solucao"><div class="solucao-icon">📚</div><h4>Catálogos Digitais</h4><p>Vitrines interativas e bonitas para os seus produtos, com pedido direto no WhatsApp.</p></div>
-    <div class="solucao"><div class="solucao-icon">⚙️</div><h4>Automações</h4><p>Integração de sistemas. O cliente preenche o formulário e o seu WhatsApp apita na hora.</p></div>
+    
+    <!-- COPYWRITING AJUSTADO AQUI -->
+    <div class="solucao"><div class="solucao-icon">⚙️</div><h4>Automações</h4><p>Economize horas de trabalho com processos automáticos.</p></div>
+    
     <div class="solucao"><div class="solucao-icon">🖥️</div><h4>Sistemas Web</h4><p>Painéis de controle, áreas de membros e sistemas internos para a sua empresa.</p></div>
     <div class="solucao"><div class="solucao-icon">🛒</div><h4>E-commerce</h4><p>Lojas virtuais completas, prontas para vender no seu nicho, com carrinho e pagamento.</p></div>
     <div class="solucao"><div class="solucao-icon">📊</div><h4>IA para Empresas</h4><p>Análise de dados e implementação de IA para otimizar os processos do seu negócio.</p></div>
@@ -179,7 +203,6 @@
   </div>
   
   <div class="portfolio-grid">
-    <!-- Projeto 1: Garantia de Rodas -->
     <a href="pneus.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800');"></div>
       <div class="port-info">
@@ -188,7 +211,6 @@
         <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">Landing Page</span></div>
       </div>
     </a>
-    <!-- Projeto 2: Distribuidora -->
     <a href="bebidas.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=800');"></div>
       <div class="port-info">
@@ -197,7 +219,6 @@
         <div class="port-tags"><span class="tag">Distribuidora</span><span class="tag">Catálogo Digital</span></div>
       </div>
     </a>
-    <!-- Projeto 3: Clínica -->
     <a href="#" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800');"></div>
       <div class="port-info">
@@ -206,7 +227,6 @@
         <div class="port-tags"><span class="tag">Saúde</span><span class="tag">Site Institucional</span></div>
       </div>
     </a>
-    <!-- Projeto 4: Contabilidade -->
     <a href="contabilidade.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800');"></div>
       <div class="port-info">
@@ -215,7 +235,6 @@
         <div class="port-tags"><span class="tag">Contabilidade</span><span class="tag">Site Institucional</span></div>
       </div>
     </a>
-    <!-- Projeto 5: AutoPrime -->
     <a href="veiculos.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800');"></div>
       <div class="port-info">
@@ -224,7 +243,6 @@
         <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
       </div>
     </a>
-    <!-- Projeto 6: Advocacia -->
     <a href="advocacia.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800');"></div>
       <div class="port-info">
@@ -233,7 +251,6 @@
         <div class="port-tags"><span class="tag">Jurídico</span><span class="tag">Site Institucional</span></div>
       </div>
     </a>
-    <!-- Projeto 7: Perfumes -->
     <a href="perfumes.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800');"></div>
       <div class="port-info">
@@ -242,7 +259,6 @@
         <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Perfumaria</span></div>
       </div>
     </a>
-    <!-- Projeto 8: Dropshipping -->
     <a href="dropshipping.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800');"></div>
       <div class="port-info">
@@ -251,7 +267,6 @@
         <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Dropshipping</span></div>
       </div>
     </a>
-    <!-- Projeto 9: Imobiliária -->
     <a href="imobiliaria.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800');"></div>
       <div class="port-info">
@@ -260,7 +275,6 @@
         <div class="port-tags"><span class="tag">Imobiliário</span><span class="tag">Catálogo Digital</span></div>
       </div>
     </a>
-    <!-- Projeto 10: Arquitetura -->
     <a href="arquitetura.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800');"></div>
       <div class="port-info">
@@ -269,7 +283,6 @@
         <div class="port-tags"><span class="tag">Arquitetura</span><span class="tag">Landing Page</span></div>
       </div>
     </a>
-    <!-- Projeto 11: Motos -->
     <a href="motos.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800');"></div>
       <div class="port-info">
@@ -278,7 +291,6 @@
         <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
       </div>
     </a>
-    <!-- Projeto 12: Móveis -->
     <a href="moveis.html" target="_blank" class="port-item">
       <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800');"></div>
       <div class="port-info">
@@ -290,7 +302,67 @@
   </div>
 </section>
 
-<section id="precos" style="background: #121214;">
+<!-- NOVA SEÇÃO: COMO FUNCIONA -->
+<section id="processo" style="background: #121214;">
+  <div class="section-head">
+    <h2>Como Funciona</h2>
+    <p>Um processo transparente e sem burocracia para tirar o seu projeto do papel.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="processo-grid">
+    <div class="processo-item">
+      <div class="processo-num">1</div>
+      <h4>Conversa Inicial</h4>
+      <p>Entendemos a sua dor e o seu objetivo com o projeto.</p>
+    </div>
+    <div class="processo-item">
+      <div class="processo-num">2</div>
+      <h4>Planejamento</h4>
+      <p>Definimos a estrutura, o design e as automações necessárias.</p>
+    </div>
+    <div class="processo-item">
+      <div class="processo-num">3</div>
+      <h4>Desenvolvimento</h4>
+      <p>Colocamos a mão na massa e construímos a sua máquina de vendas.</p>
+    </div>
+    <div class="processo-item">
+      <div class="processo-num">4</div>
+      <h4>Aprovação</h4>
+      <p>Você revisa, testa e nos dá o sinal verde para prosseguir.</p>
+    </div>
+    <div class="processo-item">
+      <div class="processo-num">5</div>
+      <h4>Publicação</h4>
+      <p>Colocamos o projeto no ar, configurado e pronto para o Google.</p>
+    </div>
+    <div class="processo-item">
+      <div class="processo-num">6</div>
+      <h4>Suporte</h4>
+      <p>Acompanhamento contínuo e manutenção para você focar em vender.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOVA SEÇÃO: AUTORIDADE / FOMO -->
+<div class="autoridade-bg">
+  <section id="autoridade">
+    <div class="autoridade-wrap">
+      <h2>Por que investir agora?</h2>
+      <p style="font-size: 1.1rem; color: var(--texto-muted); margin-bottom: 30px;">Enquanto muitos negócios ainda dependem apenas de indicações, os seus concorrentes já estão:</p>
+      
+      <ul class="autoridade-list">
+        <li><span>✅</span> Aparecendo no Google</li>
+        <li><span>✅</span> Fechando vendas no WhatsApp</li>
+        <li><span>✅</span> Automatizando o atendimento</li>
+        <li><span>✅</span> Captando clientes online 24h por dia</li>
+      </ul>
+
+      <p class="autoridade-warning">Não deixe o seu negócio para trás. A transformação digital não é o futuro, é o presente.</p>
+    </div>
+  </section>
+</div>
+
+<section id="precos">
   <div class="section-head">
     <h2>Planos e Soluções</h2>
     <p>Escolha o nível de transformação que a sua empresa precisa agora.</p>
@@ -322,7 +394,7 @@
       <ul class="preco-lista">
         <li>Tudo do Presença Essencial</li>
         <li>Automação de Leads no WhatsApp</li>
-        <li>Assistente de IA (ChatGPT) no site</li>
+        <li>Assistente de IA que atende 24h</li>
         <li>Integração com E-mail Marketing</li>
         <li>Treinamento da equipe</li>
       </ul>
@@ -377,6 +449,13 @@
   </div>
 </section>
 
+<!-- NOVO CTA FINAL AGRESSIVO -->
+<div class="cta-final">
+  <h2>Seu concorrente pode fechar o próximo cliente.<br>Ou você pode ser encontrado primeiro.</h2>
+  <p>Vamos construir sua presença digital?</p>
+  <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20construir%20minha%20presen%C3%A7a%20digital%20agora." class="btn btn-cta-final" target="_blank">Falar no WhatsApp</a>
+</div>
+
 <footer>
   <div class="logo" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
     <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -390,6 +469,7 @@
   <div class="footer-links">
     <a href="#solucoes">Soluções</a>
     <a href="#portfolio">Portfólio</a>
+    <a href="#processo">Como Funciona</a>
     <a href="#precos">Planos</a>
     <a href="https://wa.me/5591982201099" target="_blank">WhatsApp</a>
   </div>
