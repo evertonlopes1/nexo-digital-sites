@@ -6,7 +6,7 @@
 <title>Nexo Digital — Sites e Templates Profissionais</title>
 <meta name="description" content="Criamos sites incríveis para o seu negócio. Templates prontos ou projetos personalizados. Entrega rápida e design premium.">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='100%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23d946ef'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='%2309090b'/%3E%3Cpath d='M30 75 V35 Q30 25 40 25 H50 L70 65 V25 H80 V75 Q80 85 70 85 H60 L40 45 V75 Z' fill='url(%23g)'/%3E%3Crect x='75' y='10' width='10' height='10' fill='%23d946ef'/%3E%3Crect x='60' y='15' width='6' height='6' fill='%238b5cf6'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='100%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%23d946ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='%2309090b' stroke='url(%23g)' stroke-width='6'/%3E%3Cpath d='M30 75V35Q30 25 40 25H50L70 65V25H80V75Q80 85 70 85H60L40 45V75Z' fill='url(%23g)'/%3E%3Crect x='75' y='10' width='10' height='10' fill='%23d946ef'/%3E%3Crect x='60' y='15' width='6' height='6' fill='%238b5cf6'/%3E%3C/svg%3E">
 <style>
   /* RESET E VARIÁVEIS */
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,7 +19,7 @@
   a { text-decoration: none; color: inherit; }
   
   /* NAVBAR */
-  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.05); }
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.04); }
   .logo { font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
   .logo span { background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .nav-links { display: flex; gap: 30px; list-style: none; }
@@ -30,8 +30,8 @@
   .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; }
 
   /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at top, rgba(139,92,246,.15), transparent 40%); }
-  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.3); color: #c4b5fd; border-radius: 50px; font-size: .8rem; font-weight: 600; margin-bottom: 25px; animation: fadeUp 1s ease both; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at top, rgba(139,92,246,.2), transparent 60%); }
+  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.3); color: #c4b5fd; border-radius: 50px; font-size: .8rem; font-weight: 600; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; max-width: 900px; margin-bottom: 25px; letter-spacing: -1px; animation: fadeUp 1s ease .2s both; }
   .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero p { color: var(--texto-muted); font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; animation: fadeUp 1s ease .3s both; }
@@ -103,7 +103,7 @@
   .footer-links a { color: var(--texto-muted); font-size: .9rem; transition: color .3s; }
   .footer-links a:hover { color: var(--texto); }
   .copy { color: #52525b; font-size: .8rem; }
-  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 5px 25px rgba(37,211,102,.4); animation: pulse 2s infinite; }
+  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 5px 25px rgba(37,211,102,.4); animation: pulse 2s infinite; transition: transform .3s; z-index: 999; }
   .wpp:hover { transform: scale(1.1); }
   @keyframes pulse { 0% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } 50% { box-shadow: 0 5px 30px rgba(37,211,102,.7); } 100% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -118,7 +118,21 @@
 <body>
 
 <nav>
-  <div class="logo">Nexo <span>Digital</span></div>
+  <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+    <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="neonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d946ef" />
+          <stop offset="100%" stop-color="#8b5cf6" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="#09090b" stroke="url(#neonGrad)" stroke-width="4"/>
+      <path d="M 30 75 V 35 Q 30 25 40 25 H 50 L 70 65 V 25 H 80 V 75 Q 80 85 70 85 H 60 L 40 45 V 75 Z" fill="url(#neonGrad)"/>
+      <rect x="75" y="10" width="10" height="10" fill="#d946ef" />
+      <rect x="60" y="15" width="6" height="6" fill="#8b5cf6" />
+    </svg>
+    <span style="color: white; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px;">Nexo <span style="background: linear-gradient(135deg, #8b5cf6, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Digital</span></span>
+  </div>
   <ul class="nav-links">
     <li><a href="#portfolio">Portfólio</a></li>
     <li><a href="#servicos">Por que nós?</a></li>
@@ -344,7 +358,7 @@
       <div class="preco-valor">R$ 1.497<small>,00</small></div>
       <div class="preco-periodo">Pagamento único</div>
       <ul class="preco-lista">
-        <li>Tudo do Template Premium</li><li>Identidade visual exclusiva</li><li>Inserção das suas fotos e textos</li><li>Configuração de domínio e hospedagem</li><li>Otimização avançada de SEO e conversão</li>
+        <li>Tudo do Template Premium</li><li>Identidade visual exclusiva</li><li>Inserção das suas fotos e textos</li><li>Configuração de domínio e hospedagem</li><li>Otimização avançada de SEO</li>
       </ul>
       <a href="https://wa.me/5591988001020?text=Quero%20um%20Site%20Personalizado%20com%20a%20Nexo%20Digital" class="btn btn-primario" target="_blank">Quero este Plano</a>
     </div>
@@ -364,10 +378,10 @@
 <section id="faq" style="background: #121214;">
   <div class="section-head"><h2>Perguntas Frequentes</h2><p>Tire suas dúvidas antes de começar.</p><div class="divider"></div></div>
   <div class="faq-list">
-    <details class="faq-item"><summary>Eu preciso saber programar para usar o Template?</summary><div class="faq-content">Não! O template já vem pronto. Você só precisa de um computador para colocar seu conteúdo e configurar o envio.</div></details>
-    <details class="faq-item"><summary>Quanto custa manter o site no ar?</summary><div class="faq-content">Você vai precisar de um domínio (ex: seunegocio.com.br) que custa em média R$ 40 por ano, e hospedagem a partir de R$ 20/mês, dependendo da sua necessidade.</div></details>
-    <details class="faq-item"><summary>Quanto tempo demora para o site ficar pronto?</summary><div class="faq-content">Se você comprar um Template, o acesso é imediato. Se for um Site Personalizado, a entrega costuma ocorrer em 5 a 10 dias úteis após aprovação do conteúdo.</div></details>
-    <details class="faq-item"><summary>Vocês fazem manutenção depois da entrega?</summary><div class="faq-content">Sim! O Site Personalizado inclui 90 dias de suporte. Após esse período, você pode contratar um plano mensal ou pedir ajuda pontual.</div></details>
+    <details class="faq-item"><summary>Eu preciso saber programar para usar o Template?</summary><div class="faq-content">Não! O template já vem pronto. Você só precisa de um computador para colocar seus textos, fotos e informações de contato.</div></details>
+    <details class="faq-item"><summary>Quanto custa manter o site no ar?</summary><div class="faq-content">Você vai precisar de um domínio (ex: seunegocio.com.br) que custa em média R$ 40 por ano e uma hospedagem simples, que costuma ficar na faixa de R$ 30 a R$ 100 por mês dependendo do projeto.</div></details>
+    <details class="faq-item"><summary>Quanto tempo demora para o site ficar pronto?</summary><div class="faq-content">Se você comprar um Template, o acesso é imediato. Se for um Site Personalizado, normalmente leva de 3 a 10 dias, dependendo da quantidade de revisões e da complexidade do conteúdo.</div></details>
+    <details class="faq-item"><summary>Vocês fazem manutenção depois da entrega?</summary><div class="faq-content">Sim! O Site Personalizado inclui 90 dias de suporte. Após esse período, você pode contratar manutenção mensal ou ajustes pontuais conforme a necessidade.</div></details>
   </div>
 </section>
 
