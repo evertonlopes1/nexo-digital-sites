@@ -5,44 +5,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nexo Digital — Sites, Automações e IA para Empresas</title>
 <meta name="description" content="Não vendemos apenas sites. Criamos máquinas de vendas com Landing Pages, Automações, E-commerce e Assistentes de IA.">
+<meta name="theme-color" content="#09090b">
+<link rel="canonical" href="https://nexodigital.com.br/">
+
+<!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Nexo Digital">
+<meta property="og:title" content="Nexo Digital — Sites, Automações e IA para Empresas">
+<meta property="og:description" content="Criamos máquinas de vendas com Landing Pages, Automações, E-commerce e Assistentes de IA.">
+<meta property="og:url" content="https://nexodigital.com.br/">
+<meta property="og:image" content="https://nexodigital.com.br/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexo Digital — Sites, Automações e IA">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexo Digital — Sites, Automações e IA">
+<meta name="twitter:description" content="Criamos máquinas de vendas com Landing Pages, Automações e Assistentes de IA.">
+<meta name="twitter:image" content="https://nexodigital.com.br/og-image.jpg">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='100%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23d946ef'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='%2309090b'/%3E%3Cpath d='M30 75 V35 Q30 25 40 25 H50 L70 65 V25 H80 V75 Q80 85 70 85 H60 L40 45 V75 Z' fill='url(%23g)'/%3E%3Crect x='75' y='10' width='10' height='10' fill='%23d946ef'/%3E%3Crect x='60' y='15' width='6' height='6' fill='%238b5cf6'/%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Dados estruturados para Google (rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nexo Digital",
+  "description": "Criação de sites, landing pages, automações e assistentes de IA para empresas.",
+  "url": "https://nexodigital.com.br/",
+  "telephone": "+5591982201099",
+  "areaServed": "BR",
+  "priceRange": "R$1.497 - R$3.997+"
+}
+</script>
+
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --bg: #09090b; --card: #18181b; --borda: #27272a; --texto: #f4f4f5;
-    --texto-muted: #a1a1aa; --primaria: #8b5cf6; --primaria-hover: #7c3aed; --verde: #25d366;
+    --bg: #09090b;
+    --card: #18181b;
+    --borda: #27272a;
+    --texto: #f4f4f5;
+    --texto-muted: #a1a1aa;
+    --primaria: #8b5cf6;
+    --primaria-hover: #7c3aed;
+    --secundaria: #d946ef;
+    --gradiente: linear-gradient(135deg, #8b5cf6, #d946ef);
+    --verde: #25d366;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--texto); overflow-x: hidden; line-height: 1.6; }
   a { text-decoration: none; color: inherit; }
-  
+  img { max-width: 100%; height: auto; display: block; }
+  :focus-visible { outline: 2px solid var(--primaria); outline-offset: 3px; border-radius: 4px; }
+
+  /* Skip link (acessibilidade teclado) */
+  .skip-link { position: absolute; top: -100px; left: 10px; background: var(--primaria); color: #fff; padding: 10px 20px; border-radius: 8px; z-index: 9999; font-weight: 600; }
+  .skip-link:focus { top: 10px; }
+
+  /* Container full-width para seções com fundo */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
   /* NAVBAR */
-  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borda); }
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,11,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--borda); }
   .logo { font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
-  .logo span { background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .logo-gradient { background: var(--gradiente); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+  .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
   .nav-links a { font-size: .9rem; font-weight: 500; color: var(--texto-muted); transition: color .3s; }
   .nav-links a:hover { color: var(--texto); }
-  .btn-nav { background: var(--texto); color: var(--bg); padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: .9rem; transition: all .3s; }
+  .btn-nav { background: var(--texto); color: var(--bg); padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: .9rem; transition: all .3s; display: inline-block; }
   .btn-nav:hover { background: var(--texto-muted); transform: translateY(-2px); }
-  .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; }
+  .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; padding: 5px 10px; line-height: 1; }
+  .nav-cta-mobile { display: none; }
+
+  /* Menu mobile ativo */
+  .nav-links.aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #18181b;
+    padding: 20px 5% 25px;
+    border-bottom: 1px solid var(--borda);
+    gap: 15px;
+    align-items: stretch;
+  }
+  .nav-links.aberto .btn-nav { display: block; text-align: center; }
 
   /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at 50% 0%, rgba(139,92,246,.15) 0%, transparent 60%); }
+  .hero { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 20px 80px; position: relative; background: radial-gradient(circle at 50% 0%, rgba(139,92,246,.15) 0%, transparent 60%); }
   .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.3); color: #c4b5fd; border-radius: 50px; font-size: .8rem; font-weight: 600; margin-bottom: 25px; animation: fadeUp 1s ease .1s both; }
   .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; max-width: 1000px; margin-bottom: 25px; letter-spacing: -1px; animation: fadeUp 1s ease .2s both; }
-  .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--primaria), #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero h1 em { font-style: normal; background: var(--gradiente); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
   .hero p { color: var(--texto-muted); font-size: 1.2rem; max-width: 700px; margin-bottom: 40px; animation: fadeUp 1s ease .3s both; }
   .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s ease .4s both; }
-  .btn { padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all .3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
-  .btn-primario { background: var(--primaria); color: white; box-shadow: 0 4px 20px rgba(139,92,246,.3); }
+  .btn { padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all .3s; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+  .btn-primario { background: var(--primaria); color: #fff; box-shadow: 0 4px 20px rgba(139,92,246,.3); }
   .btn-primario:hover { background: var(--primaria-hover); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(139,92,246,.5); }
   .btn-secundario { background: var(--card); color: var(--texto); border: 1px solid var(--borda); }
   .btn-secundario:hover { border-color: var(--texto-muted); transform: translateY(-2px); }
 
   /* SEÇÕES GERAIS */
-  section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+  section { padding: 100px 0; }
+  .bg-cinza { background: #121214; }
   .section-head { text-align: center; margin-bottom: 60px; }
   .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
   .section-head p { color: var(--texto-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
@@ -61,26 +135,29 @@
   .port-item { background: var(--card); border: 1px solid var(--borda); border-radius: 16px; overflow: hidden; transition: all .4s; cursor: pointer; position: relative; display: block; }
   .port-item:hover { transform: translateY(-8px); border-color: var(--primaria); box-shadow: 0 20px 40px rgba(0,0,0,.5); }
   .port-img { height: 220px; background-size: cover; background-position: center; position: relative; }
-  .port-img::after { content: 'Abrir Demonstração →'; position: absolute; inset: 0; background: rgba(9,9,11,.7); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; opacity: 0; transition: opacity .3s; }
-  .port-item:hover .port-img::after { opacity: 1; }
+  .port-img::after { content: 'Abrir Demonstração →'; position: absolute; inset: 0; background: rgba(9,9,11,.7); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; opacity: 0; transition: opacity .3s; }
+  .port-item:hover .port-img::after, .port-item:focus-visible .port-img::after { opacity: 1; }
+  .port-item.em-breve { pointer-events: none; opacity: .75; cursor: default; }
+  .port-item.em-breve .port-img::after { content: '🚧 Em breve'; opacity: 1; background: rgba(9,9,11,.85); }
   .port-info { padding: 25px; }
   .port-info h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
   .port-info p { color: var(--texto-muted); font-size: .9rem; margin-bottom: 15px; }
   .port-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .tag { font-size: .7rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; background: rgba(139,92,246,.1); color: #c4b5fd; }
 
-  /* COMO FUNCIONA (PROCESSO) */
+  /* PROCESSO */
   .processo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; position: relative; }
   .processo-item { text-align: center; position: relative; padding: 20px 10px; }
   .processo-num { width: 50px; height: 50px; border-radius: 50%; background: var(--bg); border: 2px solid var(--primaria); color: var(--primaria); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; margin: 0 auto 20px auto; position: relative; z-index: 2; }
   .processo-item h4 { font-size: 1.1rem; margin-bottom: 5px; }
   .processo-item p { color: var(--texto-muted); font-size: .85rem; }
 
-  /* AUTORIDADE / FOMO */
+  /* AUTORIDADE */
   .autoridade-bg { background: linear-gradient(135deg, #18181b 0%, #09090b 100%); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
   .autoridade-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
   .autoridade-wrap h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px; }
-  .autoridade-list { display: flex; flex-direction: column; gap: 15px; margin: 40px 0; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .autoridade-sub { font-size: 1.1rem; color: var(--texto-muted); margin-bottom: 30px; }
+  .autoridade-list { display: flex; flex-direction: column; gap: 15px; margin: 40px auto; text-align: left; max-width: 600px; list-style: none; }
   .autoridade-list li { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 15px; background: rgba(255,255,255,.03); padding: 15px 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,.05); }
   .autoridade-list li span { color: #22c55e; font-size: 1.5rem; }
   .autoridade-warning { font-size: 1.2rem; color: var(--texto-muted); font-weight: 500; }
@@ -90,7 +167,7 @@
   .preco-card { background: var(--card); border: 1px solid var(--borda); padding: 40px 30px; border-radius: 20px; position: relative; transition: all .3s; }
   .preco-card:hover { border-color: var(--primaria); transform: translateY(-5px); }
   .preco-card.destaque { border: 2px solid var(--primaria); box-shadow: 0 10px 40px rgba(139,92,246,.15); }
-  .badge-destaque { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primaria); color: white; padding: 5px 20px; border-radius: 50px; font-size: .8rem; font-weight: 700; }
+  .badge-destaque { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primaria); color: #fff; padding: 5px 20px; border-radius: 50px; font-size: .8rem; font-weight: 700; white-space: nowrap; }
   .preco-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
   .preco-card > p { color: var(--texto-muted); font-size: .9rem; margin-bottom: 25px; }
   .preco-valor { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
@@ -110,360 +187,353 @@
   .faq-item[open] summary::after { transform: rotate(45deg); }
   .faq-content { padding: 0 25px 25px; color: var(--texto-muted); font-size: .95rem; }
 
-  /* CTA FINAL AGRESSIVO */
+  /* CTA FINAL */
   .cta-final { background: var(--primaria); padding: 100px 5%; text-align: center; position: relative; overflow: hidden; }
-  .cta-final::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%); opacity: .5; }
-  .cta-final h2 { font-size: clamp(2rem, 5vw, 4rem); color: white; line-height: 1.2; margin-bottom: 20px; position: relative; z-index: 2; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .cta-final::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%); opacity: .5; pointer-events: none; }
+  .cta-final h2 { font-size: clamp(2rem, 5vw, 4rem); color: #fff; line-height: 1.2; margin-bottom: 20px; position: relative; z-index: 2; max-width: 900px; margin-left: auto; margin-right: auto; }
   .cta-final p { font-size: 1.3rem; color: #e4e4e7; margin-bottom: 40px; position: relative; z-index: 2; }
-  .btn-cta-final { background: white; color: var(--primaria); font-size: 1.2rem; padding: 20px 50px; font-weight: 800; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .btn-cta-final { background: #fff; color: var(--primaria); font-size: 1.2rem; padding: 20px 50px; font-weight: 800; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
   .btn-cta-final:hover { background: #f4f4f5; transform: translateY(-5px) scale(1.02); }
 
   /* FOOTER E WHATSAPP */
   footer { background: #09090b; border-top: 1px solid var(--borda); padding: 60px 5% 30px; text-align: center; }
   footer .logo { justify-content: center; margin-bottom: 20px; }
   footer p { color: var(--texto-muted); font-size: .9rem; margin-bottom: 20px; }
-  .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
+  .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; }
   .footer-links a { color: var(--texto-muted); font-size: .9rem; transition: color .3s; }
   .footer-links a:hover { color: var(--texto); }
-  .copy { color: #52525b; font-size: .8rem; }
-  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 5px 25px rgba(37,211,102,.4); z-index: 999; transition: transform .3s; animation: pulse 2s infinite; }
+  .copy { color: var(--texto-muted); font-size: .8rem; }
+  .wpp { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; border-radius: 50%; background: var(--verde); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 5px 25px rgba(37,211,102,.4); z-index: 999; transition: transform .3s; animation: pulse 2s infinite; }
   .wpp:hover { transform: scale(1.1); }
-  @keyframes pulse { 0% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } 50% { box-shadow: 0 5px 30px rgba(37,211,102,.7); } 100% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 5px 25px rgba(37,211,102,.4); } 50% { box-shadow: 0 5px 30px rgba(37,211,102,.7); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 768px) {
-    .nav-links { display: none; } .btn-nav { display: none; } .menu-btn { display: block; }
-    .hero p { font-size: 1rem; } .btn { width: 100%; justify-content: center; }
-    .precos-grid { grid-template-columns: 1fr; } section { padding: 70px 5%; }
+    .nav-links { display: none; }
+    .btn-nav { display: none; }
+    .menu-btn { display: block; }
+    .nav-cta-mobile { display: block; }
+    .hero p { font-size: 1rem; }
+    .btn { width: 100%; }
+    .precos-grid { grid-template-columns: 1fr; }
+    section { padding: 70px 0; }
     .processo-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   }
 </style>
 </head>
 <body>
 
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+
 <nav>
   <div class="logo">
-    <svg width="35" height="35" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <svg width="35" height="35" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs><linearGradient id="neonGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d946ef" /><stop offset="100%" stop-color="#8b5cf6" /></linearGradient></defs>
       <circle cx="50" cy="50" r="48" fill="#09090b" stroke="url(#neonGrad)" stroke-width="4"/>
       <path d="M 30 75 V 35 Q 30 25 40 25 H 50 L 70 65 V 25 H 80 V 75 Q 80 85 70 85 H 60 L 40 45 V 75 Z" fill="url(#neonGrad)"/>
       <rect x="75" y="10" width="10" height="10" fill="#d946ef" />
       <rect x="60" y="15" width="6" height="6" fill="#8b5cf6" />
     </svg>
-    <span style="color: white;">Nexo <span style="background: linear-gradient(135deg, #8b5cf6, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Digital</span></span>
+    <span style="color: #fff;">Nexo <span class="logo-gradient">Digital</span></span>
   </div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#solucoes">Soluções</a></li>
     <li><a href="#portfolio">Portfólio</a></li>
     <li><a href="#processo">Como Funciona</a></li>
     <li><a href="#precos">Planos</a></li>
+    <li class="nav-cta-mobile">
+      <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20transformar%20meu%20neg%C3%B3cio." class="btn-nav" target="_blank" rel="noopener noreferrer">Falar com Especialista</a>
+    </li>
   </ul>
-  <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20transformar%20meu%20neg%C3%B3cio." class="btn-nav" target="_blank">Falar com Especialista</a>
-  <button class="menu-btn">☰</button>
+  <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20transformar%20meu%20neg%C3%B3cio." class="btn-nav" target="_blank" rel="noopener noreferrer">Falar com Especialista</a>
+  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">☰</button>
 </nav>
 
-<header class="hero">
-  <div class="hero-badge">🚀 Tecnologia e Crescimento</div>
-  <h1>Sua empresa pronta para a era da <em>Inteligência Artificial</em>.</h1>
-  <p>Não vendemos apenas sites. Criamos máquinas de vendas com Landing Pages, Automações, E-commerce e Assistentes de IA.</p>
-  <div class="hero-btns">
-    <a href="#solucoes" class="btn btn-primario">Ver Soluções</a>
-    <a href="#portfolio" class="btn btn-secundario">Explorar Portfólio</a>
-  </div>
-</header>
+<main id="main">
 
-<section id="solucoes" style="background: #121214;">
-  <div class="section-head">
-    <h2>Nossas Soluções</h2>
-    <p>Transformamos a presença digital da sua empresa com tecnologia de ponta.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="solucoes-grid">
-    <div class="solucao"><div class="solucao-icon">🎯</div><h4>Landing Pages</h4><p>Páginas de alta conversão focadas em capturar leads e vender um produto específico.</p></div>
-    
-    <!-- COPYWRITING AJUSTADO AQUI -->
-    <div class="solucao"><div class="solucao-icon">🤖</div><h4>Assistentes de IA</h4><p>Assistente de IA que responde clientes 24h e gera mais oportunidades de venda.</p></div>
-    
-    <div class="solucao"><div class="solucao-icon">📚</div><h4>Catálogos Digitais</h4><p>Vitrines interativas e bonitas para os seus produtos, com pedido direto no WhatsApp.</p></div>
-    
-    <!-- COPYWRITING AJUSTADO AQUI -->
-    <div class="solucao"><div class="solucao-icon">⚙️</div><h4>Automações</h4><p>Economize horas de trabalho com processos automáticos.</p></div>
-    
-    <div class="solucao"><div class="solucao-icon">🖥️</div><h4>Sistemas Web</h4><p>Painéis de controle, áreas de membros e sistemas internos para a sua empresa.</p></div>
-    <div class="solucao"><div class="solucao-icon">🛒</div><h4>E-commerce</h4><p>Lojas virtuais completas, prontas para vender no seu nicho, com carrinho e pagamento.</p></div>
-    <div class="solucao"><div class="solucao-icon">📊</div><h4>IA para Empresas</h4><p>Análise de dados e implementação de IA para otimizar os processos do seu negócio.</p></div>
-  </div>
-</section>
+  <header class="hero">
+    <div class="hero-badge">🚀 Tecnologia e Crescimento</div>
+    <h1>Sua empresa pronta para a era da <em>Inteligência Artificial</em>.</h1>
+    <p>Não vendemos apenas sites. Criamos máquinas de vendas com Landing Pages, Automações, E-commerce e Assistentes de IA.</p>
+    <div class="hero-btns">
+      <a href="#solucoes" class="btn btn-primario">Ver Soluções</a>
+      <a href="#portfolio" class="btn btn-secundario">Explorar Portfólio</a>
+    </div>
+  </header>
 
-<section id="portfolio">
-  <div class="section-head">
-    <h2>Projetos Recentes</h2>
-    <p>Clique em um projeto para abrir a demonstração real do site.</p>
-    <div class="divider"></div>
-  </div>
-  
-  <div class="portfolio-grid">
-    <a href="pneus.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800');"></div>
-      <div class="port-info">
-        <h4>Garantia de Rodas</h4>
-        <p>Site para loja de pneus e serviços automotivos. Catálogo de produtos e agendamento de serviços.</p>
-        <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">Landing Page</span></div>
+  <section id="solucoes" class="bg-cinza">
+    <div class="container">
+      <div class="section-head">
+        <h2>Nossas Soluções</h2>
+        <p>Transformamos a presença digital da sua empresa com tecnologia de ponta.</p>
+        <div class="divider"></div>
       </div>
-    </a>
-    <a href="bebidas.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=800');"></div>
-      <div class="port-info">
-        <h4>Distribuidora Central</h4>
-        <p>Catálogo interativo para distribuidora de bebidas, focado em pedidos rápidos via WhatsApp.</p>
-        <div class="port-tags"><span class="tag">Distribuidora</span><span class="tag">Catálogo Digital</span></div>
+      <div class="solucoes-grid">
+        <div class="solucao"><div class="solucao-icon">🎯</div><h4>Landing Pages</h4><p>Páginas de alta conversão focadas em capturar leads e vender um produto específico.</p></div>
+        <div class="solucao"><div class="solucao-icon">🤖</div><h4>Assistentes de IA</h4><p>Assistente de IA que responde clientes 24h e gera mais oportunidades de venda.</p></div>
+        <div class="solucao"><div class="solucao-icon">📚</div><h4>Catálogos Digitais</h4><p>Vitrines interativas e bonitas para os seus produtos, com pedido direto no WhatsApp.</p></div>
+        <div class="solucao"><div class="solucao-icon">⚙️</div><h4>Automações</h4><p>Economize horas de trabalho com processos automáticos.</p></div>
+        <div class="solucao"><div class="solucao-icon">🖥️</div><h4>Sistemas Web</h4><p>Painéis de controle, áreas de membros e sistemas internos para a sua empresa.</p></div>
+        <div class="solucao"><div class="solucao-icon">🛒</div><h4>E-commerce</h4><p>Lojas virtuais completas, prontas para vender no seu nicho, com carrinho e pagamento.</p></div>
+        <div class="solucao"><div class="solucao-icon">📊</div><h4>IA para Empresas</h4><p>Análise de dados e implementação de IA para otimizar os processos do seu negócio.</p></div>
       </div>
-    </a>
-    <a href="#" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800');"></div>
-      <div class="port-info">
-        <h4>Clínica Sorriso</h4>
-        <p>Template focado em autoridade para clínicas odontológicas e consultórios médicos.</p>
-        <div class="port-tags"><span class="tag">Saúde</span><span class="tag">Site Institucional</span></div>
-      </div>
-    </a>
-    <a href="contabilidade.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800');"></div>
-      <div class="port-info">
-        <h4>Contábil Prime</h4>
-        <p>Site institucional corporativo para escritório de contabilidade, focado em credibilidade.</p>
-        <div class="port-tags"><span class="tag">Contabilidade</span><span class="tag">Site Institucional</span></div>
-      </div>
-    </a>
-    <a href="veiculos.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800');"></div>
-      <div class="port-info">
-        <h4>AutoPrime Veículos</h4>
-        <p>Site para concessionária de veículos novos e seminovos. Focado em geração de leads.</p>
-        <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
-      </div>
-    </a>
-    <a href="advocacia.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800');"></div>
-      <div class="port-info">
-        <h4>Almeida & Rocha Advocacia</h4>
-        <p>Site institucional para escritório de advocacia. Design focado em autoridade e captação.</p>
-        <div class="port-tags"><span class="tag">Jurídico</span><span class="tag">Site Institucional</span></div>
-      </div>
-    </a>
-    <a href="perfumes.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800');"></div>
-      <div class="port-info">
-        <h4>Essência Premium</h4>
-        <p>Loja virtual para revenda de perfumes. Filtro interativo por marcas e checkout via WhatsApp.</p>
-        <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Perfumaria</span></div>
-      </div>
-    </a>
-    <a href="dropshipping.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800');"></div>
-      <div class="port-info">
-        <h4>DropStore</h4>
-        <p>Loja virtual focada em dropshipping com filtro de categorias e cronômetro de oferta.</p>
-        <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Dropshipping</span></div>
-      </div>
-    </a>
-    <a href="imobiliaria.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800');"></div>
-      <div class="port-info">
-        <h4>Prime Imóveis</h4>
-        <p>Site para imobiliária e corretores. Vitrine de imóveis com busca e captação de proprietários.</p>
-        <div class="port-tags"><span class="tag">Imobiliário</span><span class="tag">Catálogo Digital</span></div>
-      </div>
-    </a>
-    <a href="arquitetura.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800');"></div>
-      <div class="port-info">
-        <h4>Ateliê Estrutural</h4>
-        <p>Site premium para escritório de arquitetura e engenharia com portfólio em grid.</p>
-        <div class="port-tags"><span class="tag">Arquitetura</span><span class="tag">Landing Page</span></div>
-      </div>
-    </a>
-    <a href="motos.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800');"></div>
-      <div class="port-info">
-        <h4>Norte Motos</h4>
-        <p>Site para concessionária de motos com simulador de financiamento e vitrine.</p>
-        <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
-      </div>
-    </a>
-    <a href="moveis.html" target="_blank" class="port-item">
-      <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800');"></div>
-      <div class="port-info">
-        <h4>Madeira & Alma</h4>
-        <p>Site para ateliê de móveis artesanais. Foco em peças exclusivas e projetos sob medida.</p>
-        <div class="port-tags"><span class="tag">Móveis</span><span class="tag">Catálogo Digital</span></div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- NOVA SEÇÃO: COMO FUNCIONA -->
-<section id="processo" style="background: #121214;">
-  <div class="section-head">
-    <h2>Como Funciona</h2>
-    <p>Um processo transparente e sem burocracia para tirar o seu projeto do papel.</p>
-    <div class="divider"></div>
-  </div>
-  <div class="processo-grid">
-    <div class="processo-item">
-      <div class="processo-num">1</div>
-      <h4>Conversa Inicial</h4>
-      <p>Entendemos a sua dor e o seu objetivo com o projeto.</p>
-    </div>
-    <div class="processo-item">
-      <div class="processo-num">2</div>
-      <h4>Planejamento</h4>
-      <p>Definimos a estrutura, o design e as automações necessárias.</p>
-    </div>
-    <div class="processo-item">
-      <div class="processo-num">3</div>
-      <h4>Desenvolvimento</h4>
-      <p>Colocamos a mão na massa e construímos a sua máquina de vendas.</p>
-    </div>
-    <div class="processo-item">
-      <div class="processo-num">4</div>
-      <h4>Aprovação</h4>
-      <p>Você revisa, testa e nos dá o sinal verde para prosseguir.</p>
-    </div>
-    <div class="processo-item">
-      <div class="processo-num">5</div>
-      <h4>Publicação</h4>
-      <p>Colocamos o projeto no ar, configurado e pronto para o Google.</p>
-    </div>
-    <div class="processo-item">
-      <div class="processo-num">6</div>
-      <h4>Suporte</h4>
-      <p>Acompanhamento contínuo e manutenção para você focar em vender.</p>
-    </div>
-  </div>
-</section>
-
-<!-- NOVA SEÇÃO: AUTORIDADE / FOMO -->
-<div class="autoridade-bg">
-  <section id="autoridade">
-    <div class="autoridade-wrap">
-      <h2>Por que investir agora?</h2>
-      <p style="font-size: 1.1rem; color: var(--texto-muted); margin-bottom: 30px;">Enquanto muitos negócios ainda dependem apenas de indicações, os seus concorrentes já estão:</p>
-      
-      <ul class="autoridade-list">
-        <li><span>✅</span> Aparecendo no Google</li>
-        <li><span>✅</span> Fechando vendas no WhatsApp</li>
-        <li><span>✅</span> Automatizando o atendimento</li>
-        <li><span>✅</span> Captando clientes online 24h por dia</li>
-      </ul>
-
-      <p class="autoridade-warning">Não deixe o seu negócio para trás. A transformação digital não é o futuro, é o presente.</p>
     </div>
   </section>
-</div>
 
-<section id="precos">
-  <div class="section-head">
-    <h2>Planos e Soluções</h2>
-    <p>Escolha o nível de transformação que a sua empresa precisa agora.</p>
-    <div class="divider"></div>
-  </div>
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projetos Recentes</h2>
+        <p>Clique em um projeto para abrir a demonstração real do site.</p>
+        <div class="divider"></div>
+      </div>
 
-  <div class="precos-grid">
-    <div class="preco-card">
-      <h3>Presença Essencial</h3>
-      <p>Para quem precisa sair do zero e ter uma vitrine profissional.</p>
-      <div class="preco-valor">R$ 1.497<small>,00</small></div>
-      <div class="preco-periodo">Projeto Único</div>
-      <ul class="preco-lista">
-        <li>Landing Page ou Catálogo Digital</li>
-        <li>Design responsivo e moderno</li>
-        <li>Inserção de fotos e textos</li>
-        <li>Botão de WhatsApp inteligente</li>
-        <li>Configuração de domínio próprio</li>
-      </ul>
-      <a href="https://wa.me/5591982201099?text=Quero%20o%20plano%20Presen%C3%A7a%20Essencial" class="btn btn-secundario" target="_blank">Começar Agora</a>
+      <div class="portfolio-grid">
+        <a href="pneus.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Garantia de Rodas">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Garantia de Rodas</h4>
+            <p>Site para loja de pneus e serviços automotivos. Catálogo de produtos e agendamento de serviços.</p>
+            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">Landing Page</span></div>
+          </div>
+        </a>
+        <a href="bebidas.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Distribuidora Central">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Distribuidora Central</h4>
+            <p>Catálogo interativo para distribuidora de bebidas, focado em pedidos rápidos via WhatsApp.</p>
+            <div class="port-tags"><span class="tag">Distribuidora</span><span class="tag">Catálogo Digital</span></div>
+          </div>
+        </a>
+        <div class="port-item em-breve" aria-label="Clínica Sorriso — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Clínica Sorriso</h4>
+            <p>Template focado em autoridade para clínicas odontológicas e consultórios médicos.</p>
+            <div class="port-tags"><span class="tag">Saúde</span><span class="tag">Site Institucional</span></div>
+          </div>
+        </div>
+        <a href="contabilidade.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Contábil Prime">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Contábil Prime</h4>
+            <p>Site institucional corporativo para escritório de contabilidade, focado em credibilidade.</p>
+            <div class="port-tags"><span class="tag">Contabilidade</span><span class="tag">Site Institucional</span></div>
+          </div>
+        </a>
+        <a href="veiculos.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: AutoPrime Veículos">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>AutoPrime Veículos</h4>
+            <p>Site para concessionária de veículos novos e seminovos. Focado em geração de leads.</p>
+            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
+          </div>
+        </a>
+        <a href="advocacia.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Almeida e Rocha Advocacia">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Almeida &amp; Rocha Advocacia</h4>
+            <p>Site institucional para escritório de advocacia. Design focado em autoridade e captação.</p>
+            <div class="port-tags"><span class="tag">Jurídico</span><span class="tag">Site Institucional</span></div>
+          </div>
+        </a>
+        <a href="perfumes.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Essência Premium">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Essência Premium</h4>
+            <p>Loja virtual para revenda de perfumes. Filtro interativo por marcas e checkout via WhatsApp.</p>
+            <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Perfumaria</span></div>
+          </div>
+        </a>
+        <a href="dropshipping.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: DropStore">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>DropStore</h4>
+            <p>Loja virtual focada em dropshipping com filtro de categorias e cronômetro de oferta.</p>
+            <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Dropshipping</span></div>
+          </div>
+        </a>
+        <a href="imobiliaria.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Prime Imóveis">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Prime Imóveis</h4>
+            <p>Site para imobiliária e corretores. Vitrine de imóveis com busca e captação de proprietários.</p>
+            <div class="port-tags"><span class="tag">Imobiliário</span><span class="tag">Catálogo Digital</span></div>
+          </div>
+        </a>
+        <a href="arquitetura.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Ateliê Estrutural">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Ateliê Estrutural</h4>
+            <p>Site premium para escritório de arquitetura e engenharia com portfólio em grid.</p>
+            <div class="port-tags"><span class="tag">Arquitetura</span><span class="tag">Landing Page</span></div>
+          </div>
+        </a>
+        <a href="motos.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Norte Motos">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Norte Motos</h4>
+            <p>Site para concessionária de motos com simulador de financiamento e vitrine.</p>
+            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
+          </div>
+        </a>
+        <a href="moveis.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Madeira e Alma">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=70')"></div>
+          <div class="port-info">
+            <h4>Madeira &amp; Alma</h4>
+            <p>Site para ateliê de móveis artesanais. Foco em peças exclusivas e projetos sob medida.</p>
+            <div class="port-tags"><span class="tag">Móveis</span><span class="tag">Catálogo Digital</span></div>
+          </div>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="preco-card destaque">
-      <div class="badge-destaque">MAIS PROCURADO</div>
-      <h3>Transformação Total</h3>
-      <p>Site + Automação + IA. A máquina de vendas completa para o seu negócio.</p>
-      <div class="preco-valor">R$ 3.997<small>,00</small></div>
-      <div class="preco-periodo">Projeto + Setup</div>
-      <ul class="preco-lista">
-        <li>Tudo do Presença Essencial</li>
-        <li>Automação de Leads no WhatsApp</li>
-        <li>Assistente de IA que atende 24h</li>
-        <li>Integração com E-mail Marketing</li>
-        <li>Treinamento da equipe</li>
-      </ul>
-      <a href="https://wa.me/5591982201099?text=Quero%20o%20plano%20Transforma%C3%A7%C3%A3o%20Total" class="btn btn-primario" target="_blank">Quero este Plano</a>
+  <section id="processo" class="bg-cinza">
+    <div class="container">
+      <div class="section-head">
+        <h2>Como Funciona</h2>
+        <p>Um processo transparente e sem burocracia para tirar o seu projeto do papel.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="processo-grid">
+        <div class="processo-item"><div class="processo-num">1</div><h4>Conversa Inicial</h4><p>Entendemos a sua dor e o seu objetivo com o projeto.</p></div>
+        <div class="processo-item"><div class="processo-num">2</div><h4>Planejamento</h4><p>Definimos a estrutura, o design e as automações necessárias.</p></div>
+        <div class="processo-item"><div class="processo-num">3</div><h4>Desenvolvimento</h4><p>Colocamos a mão na massa e construímos a sua máquina de vendas.</p></div>
+        <div class="processo-item"><div class="processo-num">4</div><h4>Aprovação</h4><p>Você revisa, testa e nos dá o sinal verde para prosseguir.</p></div>
+        <div class="processo-item"><div class="processo-num">5</div><h4>Publicação</h4><p>Colocamos o projeto no ar, configurado e pronto para o Google.</p></div>
+        <div class="processo-item"><div class="processo-num">6</div><h4>Suporte</h4><p>Acompanhamento contínuo e manutenção para você focar em vender.</p></div>
+      </div>
     </div>
+  </section>
 
-    <div class="preco-card">
-      <h3>Sob Medida</h3>
-      <p>Sistemas Web, E-commerce complexo e automações personalizadas.</p>
-      <div class="preco-valor">A combinar</div>
-      <div class="preco-periodo">Orçamento Personalizado</div>
-      <ul class="preco-lista">
-        <li>Sistemas Web (Painéis e Logins)</li>
-        <li>Lojas Virtuais (E-commerce real)</li>
-        <li>IA para análise de dados</li>
-        <li>Automações avançadas (ERP)</li>
-        <li>Manutenção mensal opcional</li>
-      </ul>
-      <a href="https://wa.me/5591982201099?text=Quero%20um%20or%C3%A7amento%20Sob%20Medida" class="btn btn-secundario" target="_blank">Solicitar Orçamento</a>
+  <section id="autoridade" class="autoridade-bg">
+    <div class="container">
+      <div class="autoridade-wrap">
+        <h2>Por que investir agora?</h2>
+        <p class="autoridade-sub">Enquanto muitos negócios ainda dependem apenas de indicações, os seus concorrentes já estão:</p>
+        <ul class="autoridade-list">
+          <li><span aria-hidden="true">✅</span> Aparecendo no Google</li>
+          <li><span aria-hidden="true">✅</span> Fechando vendas no WhatsApp</li>
+          <li><span aria-hidden="true">✅</span> Automatizando o atendimento</li>
+          <li><span aria-hidden="true">✅</span> Captando clientes online 24h por dia</li>
+        </ul>
+        <p class="autoridade-warning">Não deixe o seu negócio para trás. A transformação digital não é o futuro, é o presente.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="section-head">
-    <h2>Perguntas Frequentes</h2>
-    <p>Entenda como a Nexo Digital pode transformar o seu negócio.</p>
-    <div class="divider"></div>
+  <section id="precos">
+    <div class="container">
+      <div class="section-head">
+        <h2>Planos e Soluções</h2>
+        <p>Escolha o nível de transformação que a sua empresa precisa agora.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="precos-grid">
+        <div class="preco-card">
+          <h3>Presença Essencial</h3>
+          <p>Para quem precisa sair do zero e ter uma vitrine profissional.</p>
+          <div class="preco-valor">R$ 1.497<small>,00</small></div>
+          <div class="preco-periodo">Projeto Único</div>
+          <ul class="preco-lista">
+            <li>Landing Page ou Catálogo Digital</li>
+            <li>Design responsivo e moderno</li>
+            <li>Inserção de fotos e textos</li>
+            <li>Botão de WhatsApp inteligente</li>
+            <li>Configuração de domínio próprio</li>
+          </ul>
+          <a href="https://wa.me/5591982201099?text=Quero%20o%20plano%20Presen%C3%A7a%20Essencial" class="btn btn-secundario" target="_blank" rel="noopener noreferrer">Começar Agora</a>
+        </div>
+
+        <div class="preco-card destaque">
+          <div class="badge-destaque">MAIS PROCURADO</div>
+          <h3>Transformação Total</h3>
+          <p>Site + Automação + IA. A máquina de vendas completa para o seu negócio.</p>
+          <div class="preco-valor">R$ 3.997<small>,00</small></div>
+          <div class="preco-periodo">Projeto + Setup</div>
+          <ul class="preco-lista">
+            <li>Tudo do Presença Essencial</li>
+            <li>Automação de Leads no WhatsApp</li>
+            <li>Assistente de IA que atende 24h</li>
+            <li>Integração com E-mail Marketing</li>
+            <li>Treinamento da equipe</li>
+          </ul>
+          <a href="https://wa.me/5591982201099?text=Quero%20o%20plano%20Transforma%C3%A7%C3%A3o%20Total" class="btn btn-primario" target="_blank" rel="noopener noreferrer">Quero este Plano</a>
+        </div>
+
+        <div class="preco-card">
+          <h3>Sob Medida</h3>
+          <p>Sistemas Web, E-commerce complexo e automações personalizadas.</p>
+          <div class="preco-valor">A combinar</div>
+          <div class="preco-periodo">Orçamento Personalizado</div>
+          <ul class="preco-lista">
+            <li>Sistemas Web (Painéis e Logins)</li>
+            <li>Lojas Virtuais (E-commerce real)</li>
+            <li>IA para análise de dados</li>
+            <li>Automações avançadas (ERP)</li>
+            <li>Manutenção mensal opcional</li>
+          </ul>
+          <a href="https://wa.me/5591982201099?text=Quero%20um%20or%C3%A7amento%20Sob%20Medida" class="btn btn-secundario" target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Perguntas Frequentes</h2>
+        <p>Entenda como a Nexo Digital pode transformar o seu negócio.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>O que é o "Assistente de IA"?</summary>
+          <div class="faq-content">É um robô inteligente treinado com as informações da sua empresa. Ele fica no seu site respondendo às dúvidas dos clientes 24 horas por dia, como se fosse um funcionário seu, e pode até encaminhar o cliente direto para o seu WhatsApp.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona a Automação de Leads?</summary>
+          <div class="faq-content">Quando um cliente preenche um formulário no seu site, a automação pega os dados dele e já cria um contato no seu WhatsApp (ou CRM), enviando uma mensagem de boas-vindas automática. Você não precisa fazer nada.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês fazem integração com sistemas que eu já uso?</summary>
+          <div class="faq-content">Sim! Podemos integrar o seu site com ferramentas como Google Sheets, ERPs, plataformas de pagamento (Stripe, Mercado Pago) e sistemas de e-mail marketing.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo demora para o projeto ficar pronto?</summary>
+          <div class="faq-content">Uma Landing Page fica pronta em 3 a 5 dias. Um projeto de Transformação Total (Site + IA + Automação) leva de 7 a 14 dias, dependendo da complexidade.</div>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu não gostar do resultado?</summary>
+          <div class="faq-content">Nós trabalhamos com rodadas de ajustes. Você acompanha o projeto e pode pedir alterações de design e texto até que fique exatamente como você imaginou.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-final">
+    <h2>Seu concorrente pode fechar o próximo cliente.<br>Ou você pode ser encontrado primeiro.</h2>
+    <p>Vamos construir sua presença digital?</p>
+    <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20construir%20minha%20presen%C3%A7a%20digital%20agora." class="btn btn-cta-final" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
   </div>
 
-  <div class="faq-list">
-    <details class="faq-item">
-      <summary>O que é o "Assistente de IA"?</summary>
-      <div class="faq-content">É um robô inteligente treinado com as informações da sua empresa. Ele fica no seu site respondendo às dúvidas dos clientes 24 horas por dia, como se fosse um funcionário seu, e pode até encaminhar o cliente direto para o seu WhatsApp.</div>
-    </details>
-    <details class="faq-item">
-      <summary>Como funciona a Automação de Leads?</summary>
-      <div class="faq-content">Quando um cliente preenche um formulário no seu site, a automação pega os dados dele e já cria um contato no seu WhatsApp (ou CRM), enviando uma mensagem de boas-vindas automática. Você não precisa fazer nada.</div>
-    </details>
-    <details class="faq-item">
-      <summary>Vocês fazem integração com sistemas que eu já uso?</summary>
-      <div class="faq-content">Sim! Podemos integrar o seu site com ferramentas como Google Sheets, ERPs, plataformas de pagamento (Stripe, Mercado Pago) e sistemas de e-mail marketing.</div>
-    </details>
-    <details class="faq-item">
-      <summary>Quanto tempo demora para o projeto ficar pronto?</summary>
-      <div class="faq-content">Uma Landing Page fica pronta em 3 a 5 dias. Um projeto de Transformação Total (Site + IA + Automação) leva de 7 a 14 dias, dependendo da complexidade.</div>
-    </details>
-    <details class="faq-item">
-      <summary>E se eu não gostar do resultado?</summary>
-      <div class="faq-content">Nós trabalhamos com rodadas de ajustes. Você acompanha o projeto e pode pedir alterações de design e texto até que fique exatamente como você imaginou.</div>
-    </details>
-  </div>
-</section>
-
-<!-- NOVO CTA FINAL AGRESSIVO -->
-<div class="cta-final">
-  <h2>Seu concorrente pode fechar o próximo cliente.<br>Ou você pode ser encontrado primeiro.</h2>
-  <p>Vamos construir sua presença digital?</p>
-  <a href="https://wa.me/5591982201099?text=Oi!%20Quero%20construir%20minha%20presen%C3%A7a%20digital%20agora." class="btn btn-cta-final" target="_blank">Falar no WhatsApp</a>
-</div>
+</main>
 
 <footer>
   <div class="logo" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs><linearGradient id="neonGradFooter" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d946ef" /><stop offset="100%" stop-color="#8b5cf6" /></linearGradient></defs>
       <circle cx="50" cy="50" r="48" fill="#09090b" stroke="url(#neonGradFooter)" stroke-width="4"/>
       <path d="M 30 75 V 35 Q 30 25 40 25 H 50 L 70 65 V 25 H 80 V 75 Q 80 85 70 85 H 60 L 40 45 V 75 Z" fill="url(#neonGradFooter)"/>
     </svg>
-    <span style="color: white;">Nexo <span style="background: linear-gradient(135deg, #8b5cf6, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Digital</span></span>
+    <span style="color: #fff;">Nexo <span class="logo-gradient">Digital</span></span>
   </div>
   <p>Transformando pequenos negócios em grandes marcas digitais.</p>
   <div class="footer-links">
@@ -471,23 +541,44 @@
     <a href="#portfolio">Portfólio</a>
     <a href="#processo">Como Funciona</a>
     <a href="#precos">Planos</a>
-    <a href="https://wa.me/5591982201099" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5591982201099" target="_blank" rel="noopener noreferrer">WhatsApp</a>
   </div>
   <div class="copy">© 2026 Nexo Digital. Todos os direitos reservados.</div>
 </footer>
 
-<a href="https://wa.me/5591982201099?text=Oi!%20Visitei%20o%20site%20da%20Nexo%20Digital%20e%20quero%20transformar%20meu%20neg%C3%B3cio." class="wpp" target="_blank" aria-label="WhatsApp">✆</a>
+<a href="https://wa.me/5591982201099?text=Oi!%20Visitei%20o%20site%20da%20Nexo%20Digital%20e%20quero%20transformar%20meu%20neg%C3%B3cio." class="wpp" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">✆</a>
 
 <script>
   const menuBtn = document.querySelector('.menu-btn');
-  const navLinks = document.querySelector('.nav-links');
+  const navLinks = document.getElementById('navLinks');
+
+  function fecharMenu() {
+    navLinks.classList.remove('aberto');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Abrir menu');
+    menuBtn.textContent = '☰';
+  }
+
+  function abrirMenu() {
+    navLinks.classList.add('aberto');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.setAttribute('aria-label', 'Fechar menu');
+    menuBtn.textContent = '✕';
+  }
+
   menuBtn.addEventListener('click', () => {
-    if(navLinks.style.display === 'flex') { navLinks.style.display = 'none'; } 
-    else {
-      navLinks.style.display = 'flex'; navLinks.style.flexDirection = 'column'; navLinks.style.position = 'absolute';
-      navLinks.style.top = '70px'; navLinks.style.left = '0'; navLinks.style.width = '100%';
-      navLinks.style.background = '#18181b'; navLinks.style.padding = '20px';
-    }
+    if (navLinks.classList.contains('aberto')) fecharMenu();
+    else abrirMenu();
+  });
+
+  // Fecha o menu ao clicar em qualquer link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', fecharMenu);
+  });
+
+  // Fecha o menu ao redimensionar para desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) fecharMenu();
   });
 </script>
 </body>
