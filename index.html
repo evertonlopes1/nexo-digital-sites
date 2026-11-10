@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#09090b">
 <link rel="canonical" href="https://nexodigital.com.br/">
 
-<!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Nexo Digital">
@@ -27,12 +27,10 @@
 <meta name="twitter:image" content="https://nexodigital.com.br/og-image.jpg">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='100%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23d946ef'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='%2309090b'/%3E%3Cpath d='M30 75 V35 Q30 25 40 25 H50 L70 65 V25 H80 V75 Q80 85 70 85 H60 L40 45 V75 Z' fill='url(%23g)'/%3E%3Crect x='75' y='10' width='10' height='10' fill='%23d946ef'/%3E%3Crect x='60' y='15' width='6' height='6' fill='%238b5cf6'/%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Dados estruturados para Google (rich results) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,15 +47,9 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --bg: #09090b;
-    --card: #18181b;
-    --borda: #27272a;
-    --texto: #f4f4f5;
-    --texto-muted: #a1a1aa;
-    --primaria: #8b5cf6;
-    --primaria-hover: #7c3aed;
-    --secundaria: #d946ef;
-    --gradiente: linear-gradient(135deg, #8b5cf6, #d946ef);
+    --bg: #09090b; --card: #18181b; --borda: #27272a; --texto: #f4f4f5;
+    --texto-muted: #a1a1aa; --primaria: #8b5cf6; --primaria-hover: #7c3aed;
+    --secundaria: #d946ef; --gradiente: linear-gradient(135deg, #8b5cf6, #d946ef);
     --verde: #25d366;
   }
   html { scroll-behavior: smooth; }
@@ -65,12 +57,8 @@
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; height: auto; display: block; }
   :focus-visible { outline: 2px solid var(--primaria); outline-offset: 3px; border-radius: 4px; }
-
-  /* Skip link (acessibilidade teclado) */
   .skip-link { position: absolute; top: -100px; left: 10px; background: var(--primaria); color: #fff; padding: 10px 20px; border-radius: 8px; z-index: 9999; font-weight: 600; }
   .skip-link:focus { top: 10px; }
-
-  /* Container full-width para seções com fundo */
   .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 
   /* NAVBAR */
@@ -85,20 +73,7 @@
   .menu-btn { display: none; background: none; border: none; color: var(--texto); font-size: 1.5rem; cursor: pointer; padding: 5px 10px; line-height: 1; }
   .nav-cta-mobile { display: none; }
 
-  /* Menu mobile ativo */
-  .nav-links.aberto {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #18181b;
-    padding: 20px 5% 25px;
-    border-bottom: 1px solid var(--borda);
-    gap: 15px;
-    align-items: stretch;
-  }
+  .nav-links.aberto { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: #18181b; padding: 20px 5% 25px; border-bottom: 1px solid var(--borda); gap: 15px; align-items: stretch; }
   .nav-links.aberto .btn-nav { display: block; text-align: center; }
 
   /* HERO */
@@ -287,108 +262,72 @@
   <section id="portfolio">
     <div class="container">
       <div class="section-head">
-        <h2>Projetos Recentes</h2>
-        <p>Clique em um projeto para abrir a demonstração real do site.</p>
+        <h2>Projetos e Modelos</h2>
+        <p>Clique em um nicho para abrir a demonstração real do site.</p>
         <div class="divider"></div>
       </div>
 
       <div class="portfolio-grid">
-        <a href="pneus.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Garantia de Rodas">
+        <!-- 1. Pneus e automotivo -->
+        <a href="demos/pneus.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Pneus e Automotivo">
           <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Garantia de Rodas</h4>
-            <p>Site para loja de pneus e serviços automotivos. Catálogo de produtos e agendamento de serviços.</p>
-            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">Landing Page</span></div>
-          </div>
+          <div class="port-info"><h4>Pneus e Automotivo</h4><p>Catálogo, serviços e orçamento rápido.</p><div class="port-tags"><span class="tag">Automotivo</span><span class="tag">Landing Page</span></div></div>
         </a>
-        <a href="bebidas.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Distribuidora Central">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Distribuidora Central</h4>
-            <p>Catálogo interativo para distribuidora de bebidas, focado em pedidos rápidos via WhatsApp.</p>
-            <div class="port-tags"><span class="tag">Distribuidora</span><span class="tag">Catálogo Digital</span></div>
-          </div>
-        </a>
-        <div class="port-item em-breve" aria-label="Clínica Sorriso — Em breve">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Clínica Sorriso</h4>
-            <p>Template focado em autoridade para clínicas odontológicas e consultórios médicos.</p>
-            <div class="port-tags"><span class="tag">Saúde</span><span class="tag">Site Institucional</span></div>
-          </div>
-        </div>
-        <a href="contabilidade.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Contábil Prime">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Contábil Prime</h4>
-            <p>Site institucional corporativo para escritório de contabilidade, focado em credibilidade.</p>
-            <div class="port-tags"><span class="tag">Contabilidade</span><span class="tag">Site Institucional</span></div>
-          </div>
-        </a>
-        <a href="veiculos.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: AutoPrime Veículos">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>AutoPrime Veículos</h4>
-            <p>Site para concessionária de veículos novos e seminovos. Focado em geração de leads.</p>
-            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
-          </div>
-        </a>
-        <a href="advocacia.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Almeida e Rocha Advocacia">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Almeida &amp; Rocha Advocacia</h4>
-            <p>Site institucional para escritório de advocacia. Design focado em autoridade e captação.</p>
-            <div class="port-tags"><span class="tag">Jurídico</span><span class="tag">Site Institucional</span></div>
-          </div>
-        </a>
-        <a href="perfumes.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Essência Premium">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Essência Premium</h4>
-            <p>Loja virtual para revenda de perfumes. Filtro interativo por marcas e checkout via WhatsApp.</p>
-            <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Perfumaria</span></div>
-          </div>
-        </a>
-        <a href="dropshipping.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: DropStore">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>DropStore</h4>
-            <p>Loja virtual focada em dropshipping com filtro de categorias e cronômetro de oferta.</p>
-            <div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Dropshipping</span></div>
-          </div>
-        </a>
-        <a href="imobiliaria.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Prime Imóveis">
+        <!-- 2. Imobiliárias -->
+        <a href="demos/imobiliaria.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Imobiliárias">
           <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Prime Imóveis</h4>
-            <p>Site para imobiliária e corretores. Vitrine de imóveis com busca e captação de proprietários.</p>
-            <div class="port-tags"><span class="tag">Imobiliário</span><span class="tag">Catálogo Digital</span></div>
-          </div>
+          <div class="port-info"><h4>Imobiliárias</h4><p>Imóveis, filtros e contato direto.</p><div class="port-tags"><span class="tag">Imobiliário</span><span class="tag">Catálogo Digital</span></div></div>
         </a>
-        <a href="arquitetura.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Ateliê Estrutural">
+        <!-- 3. Arquitetura -->
+        <a href="demos/arquitetura.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Arquitetura">
           <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Ateliê Estrutural</h4>
-            <p>Site premium para escritório de arquitetura e engenharia com portfólio em grid.</p>
-            <div class="port-tags"><span class="tag">Arquitetura</span><span class="tag">Landing Page</span></div>
-          </div>
+          <div class="port-info"><h4>Arquitetura</h4><p>Projetos, galerias e portfólio elegante.</p><div class="port-tags"><span class="tag">Arquitetura</span><span class="tag">Landing Page</span></div></div>
         </a>
-        <a href="motos.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Norte Motos">
+        <!-- 4. Motos -->
+        <a href="demos/motos.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Motos">
           <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Norte Motos</h4>
-            <p>Site para concessionária de motos com simulador de financiamento e vitrine.</p>
-            <div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div>
-          </div>
+          <div class="port-info"><h4>Motos</h4><p>Catálogo completo e financiamento.</p><div class="port-tags"><span class="tag">Automotivo</span><span class="tag">E-commerce</span></div></div>
         </a>
-        <a href="moveis.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Madeira e Alma">
-          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=70')"></div>
-          <div class="port-info">
-            <h4>Madeira &amp; Alma</h4>
-            <p>Site para ateliê de móveis artesanais. Foco em peças exclusivas e projetos sob medida.</p>
-            <div class="port-tags"><span class="tag">Móveis</span><span class="tag">Catálogo Digital</span></div>
-          </div>
+        <!-- 5. Barbearias -->
+        <a href="demos/barbearia.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Barbearias">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=70')"></div>
+          <div class="port-info"><h4>Barbearias</h4><p>Estilo premium, serviços e agendamento.</p><div class="port-tags"><span class="tag">Barbearia</span><span class="tag">Agendamento</span></div></div>
         </a>
+        <!-- 6. Restaurantes -->
+        <a href="demos/restaurante.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Restaurantes">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=70')"></div>
+          <div class="port-info"><h4>Restaurantes</h4><p>Menu digital, reservas e delivery.</p><div class="port-tags"><span class="tag">Restaurante</span><span class="tag">Cardápio</span></div></div>
+        </a>
+        <!-- 7. Clínicas odontológicas (Em breve) -->
+        <div class="port-item em-breve" aria-label="Clínicas Odontológicas — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=70')"></div>
+          <div class="port-info"><h4>Clínicas Odontológicas</h4><p>Tratamentos, autoridade e agendamentos.</p><div class="port-tags"><span class="tag">Saúde</span><span class="tag">Institucional</span></div></div>
+        </div>
+        <!-- 8. Academias (Em breve) -->
+        <div class="port-item em-breve" aria-label="Academias — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=70')"></div>
+          <div class="port-info"><h4>Academias</h4><p>Planos, modalidades e matrículas.</p><div class="port-tags"><span class="tag">Fitness</span><span class="tag">Landing Page</span></div></div>
+        </div>
+        <!-- 9. Construtoras (Em breve) -->
+        <div class="port-item em-breve" aria-label="Construtoras — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1541888078693-01879c0c9ceb?w=800&q=70')"></div>
+          <div class="port-info"><h4>Construtoras</h4><p>Obras, projetos e credibilidade.</p><div class="port-tags"><span class="tag">Construção</span><span class="tag">Institucional</span></div></div>
+        </div>
+        <!-- 10. Lojas virtuais -->
+        <a href="demos/dropshipping.html" target="_blank" rel="noopener noreferrer" class="port-item" aria-label="Ver demonstração: Lojas Virtuais">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=70')"></div>
+          <div class="port-info"><h4>Lojas Virtuais</h4><p>Produtos, carrinho e vendas online.</p><div class="port-tags"><span class="tag">E-commerce</span><span class="tag">Vendas</span></div></div>
+        </a>
+        <!-- 11. Energia solar (Em breve) -->
+        <div class="port-item em-breve" aria-label="Energia Solar — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=70')"></div>
+          <div class="port-info"><h4>Energia Solar</h4><p>Soluções, economia e simulação.</p><div class="port-tags"><span class="tag">Sustentável</span><span class="tag">Simulador</span></div></div>
+        </div>
+        <!-- 12. Tecnologia (Em breve) -->
+        <div class="port-item em-breve" aria-label="Tecnologia — Em breve">
+          <div class="port-img" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=70')"></div>
+          <div class="port-info"><h4>Tecnologia</h4><p>Serviços, soluções digitais e SaaS.</p><div class="port-tags"><span class="tag">B2B</span><span class="tag">Tech</span></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -571,12 +510,10 @@
     else abrirMenu();
   });
 
-  // Fecha o menu ao clicar em qualquer link
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', fecharMenu);
   });
 
-  // Fecha o menu ao redimensionar para desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) fecharMenu();
   });
