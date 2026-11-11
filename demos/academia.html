@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronFit Academia | Transforme seu Corpo</title>
+<meta name="description" content="A academia mais completa da cidade. Equipamentos de ponta, treinos personalizados e planos que cabem no seu bolso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --surface: #121212;
+    --primary: #bef264; /* Verde neon/lima */
+    --primary-dark: #84cc16;
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO */
+  .nexo-banner { background: var(--primary); color: #000; text-align: center; padding: 8px; font-weight: 700; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: #000; text-decoration: underline; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 33px; z-index: 1000; border-bottom: 1px solid #222; }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; color: var(--text); }
+  .logo span { color: var(--primary); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--primary); }
+  .btn-nav { background: var(--primary); color: #000; padding: 12px 30px; border-radius: 5px; font-weight: 800; text-transform: uppercase; text-decoration: none; transition: transform 0.3s, background 0.3s; }
+  .btn-nav:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+  /* HERO */
+  .hero { height: 100vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(90deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.7) 50%, rgba(5,5,5,0) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format') center right/cover; }
+  .hero-content { max-width: 600px; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 8vw, 7rem); line-height: 0.9; margin-bottom: 20px; }
+  .hero h1 span { color: var(--primary); display: block; }
+  .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; }
+  .hero .btn-nav { display: inline-block; padding: 16px 40px; font-size: 1.1rem; }
+
+  /* PLANOS */
+  .planos { padding: 100px 5%; text-align: center; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; margin-bottom: 10px; }
+  .section-desc { color: var(--text-muted); margin-bottom: 60px; font-size: 1.1rem; }
+  .grid-planos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; align-items: center; }
+  .card-plano { background: var(--surface); border: 1px solid #333; padding: 40px 30px; border-radius: 10px; transition: transform 0.3s, border-color 0.3s; }
+  .card-plano:hover { transform: translateY(-10px); border-color: var(--primary); }
+  .card-plano.destaque { border: 2px solid var(--primary); transform: scale(1.05); background: #0a0a0a; }
+  .card-plano.destaque:hover { transform: scale(1.05) translateY(-10px); }
+  .badge { background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; display: inline-block; margin-bottom: 20px; }
+  .card-plano h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text); }
+  .preco { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--primary); line-height: 1; margin-bottom: 20px; }
+  .preco small { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+  .lista { list-style: none; text-align: left; margin-bottom: 30px; color: var(--text-muted); }
+  .lista li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .lista li::before { content: '✓'; color: var(--primary); font-weight: 800; }
+  .btn-plano { display: block; width: 100%; background: #222; color: var(--text); padding: 15px; border: none; border-radius: 5px; font-weight: 700; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background 0.3s; }
+  .card-plano.destaque .btn-plano { background: var(--primary); color: #000; }
+  .btn-plano:hover { background: var(--primary-dark); color: #000; }
+
+  /* FOOTER */
+  footer { background: var(--surface); border-top: 1px solid #222; padding: 50px 5%; text-align: center; }
+  footer p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+  .footer-dev { margin-top: 30px; font-size: 0.8rem; color: #555; }
+  .footer-dev a { color: var(--primary); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .card-plano.destaque { transform: none; }
+    .card-plano.destaque:hover { transform: translateY(-10px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Academia%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20neg%C3%B3cio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">Iron<span>Fit</span></div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#planos">Planos</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Quero%20garantir%20meu%20dia%20gr%C3%A1tis%20na%20Academia" target="_blank" class="btn-nav">Aula Grátis</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Transforme seu<br><span>Físico. Mente. Vida.</span></h1>
+    <p>Não é apenas uma academia. É o lugar onde você se torna a sua melhor versão. Treinos focados em resultados reais.</p>
+    <a href="https://wa.me/5591982201099?text=Quero%20garantir%20meu%20dia%20gr%C3%A1tis%20na%20Academia" target="_blank" class="btn-nav">Comece Hoje</a>
+  </div>
+</header>
+
+<section class="planos" id="planos">
+  <h2 class="section-title">Escolha seu Plano</h2>
+  <p class="section-desc">Sem taxa de matrícula. Sem pegadinhas. Só resultados.</p>
+  
+  <div class="grid-planos">
+    <div class="card-plano">
+      <h3>Plano Basic</h3>
+      <div class="preco">R$ 89<small>,90/mês</small></div>
+      <ul class="lista">
+        <li>Acesso à Musculação</li>
+        <li>Acesso às Aulas Coletivas</li>
+        <li>Treino Inicial (Avaliação)</li>
+      </ul>
+      <a href="https://wa.me/5591982201099?text=Quero%20assinar%20o%20Plano%20Basic" target="_blank" class="btn-plano">Matricular</a>
+    </div>
+
+    <div class="card-plano destaque">
+      <div class="badge">Mais Escolhido</div>
+      <h3>Plano Pro</h3>
+      <div class="preco">R$ 129<small>,90/mês</small></div>
+      <ul class="lista">
+        <li>Tudo do Plano Basic</li>
+        <li>Acesso Livre (Todas as unidades)</li>
+        <li>Treino Personalizado em App</li>
+        <li>Acesso à Área de Recuperação</li>
+      </ul>
+      <a href="https://wa.me/5591982201099?text=Quero%20assinar%20o%20Plano%20Pro" target="_blank" class="btn-plano">Matricular</a>
+    </div>
+
+    <div class="card-plano">
+      <h3>Plano VIP</h3>
+      <div class="preco">R$ 199<small>,90/mês</small></div>
+      <ul class="lista">
+        <li>Tudo do Plano Pro</li>
+        <li>4 Sessões c/ Personal Trainer</li>
+        <li>Acompanhamento Nutricional</li>
+      </ul>
+      <a href="https://wa.me/5591982201099?text=Quero%20assinar%20o%20Plano%20VIP" target="_blank" class="btn-plano">Matricular</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Iron<span>Fit</span></div>
+  <p>Av. das Nações, 500 - Centro</p>
+  <p>Aberto de Segunda a Domingo, das 06h às 23h.</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Quero%20garantir%20meu%20dia%20gr%C3%A1tis%20na%20Academia" target="_blank" class="wpp" aria-label="Falar no WhatsApp">✆</a>
+
+</body>
+</html>
