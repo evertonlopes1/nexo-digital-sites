@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoSun Energia Solar | Economize até 95%</title>
+<meta name="description" content="Instalação de painéis solares residenciais e comerciais. Reduza sua conta de luz e valorize seu imóvel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8fafc;
+    --primary: #059669; /* Verde esmeralda */
+    --primary-light: #d1fae5;
+    --accent: #f59e0b; /* Amarelo solar */
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO */
+  .nexo-banner { background: var(--primary); color: #fff; text-align: center; padding: 8px; font-weight: 400; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: #fff; text-decoration: underline; font-weight: 700; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(248, 250, 252, 0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 33px; z-index: 1000; }
+  .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--primary); }
+  .btn-nav { background: var(--accent); color: #fff; padding: 12px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
+  .btn-nav:hover { background: #d97706; transform: translateY(-2px); }
+
+  /* HERO */
+  .hero { display: flex; flex-wrap: wrap; align-items: center; padding: 160px 5% 80px; max-width: 1200px; margin: 0 auto; gap: 50px; }
+  .hero-text { flex: 1; min-width: 350px; }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; color: var(--text-main); }
+  .hero h1 span { color: var(--primary); }
+  .hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 35px; max-width: 500px; }
+  .hero-img { flex: 1; min-width: 350px; height: 450px; border-radius: 30px; background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format') center/cover; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+  /* SIMULADOR */
+  .simulador { background: #fff; padding: 60px 5%; border-radius: 20px; max-width: 900px; margin: 0 auto 100px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e2e8f0; }
+  .simulador h2 { color: var(--primary); margin-bottom: 10px; }
+  .simulador p { color: var(--text-muted); margin-bottom: 30px; }
+  .form-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 0 auto; }
+  .input-custom { padding: 15px 20px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; font-family: 'Poppins', sans-serif; outline: none; flex: 1; min-width: 200px; transition: border-color 0.3s; }
+  .input-custom:focus { border-color: var(--primary); }
+  .btn-simular { background: var(--primary); color: #fff; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+  .btn-simular:hover { background: #047857; }
+
+  /* BENEFÍCIOS */
+  .beneficios { padding: 80px 5%; background: var(--primary-light); text-align: center; }
+  .section-title { font-size: 2.5rem; color: var(--text-main); margin-bottom: 50px; }
+  .grid-beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+  .card-beneficio { background: #fff; padding: 40px 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+  .icon { font-size: 2.5rem; margin-bottom: 15px; }
+  .card-beneficio h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary); }
+  .card-beneficio p { font-size: 0.95rem; color: var(--text-muted); }
+
+  /* FOOTER */
+  footer { background: var(--text-main); color: #94a3b8; padding: 60px 5% 30px; text-align: center; }
+  footer .logo { color: #fff; justify-content: center; margin-bottom: 20px; }
+  footer p { margin-bottom: 10px; }
+  .footer-dev { margin-top: 40px; font-size: 0.8rem; color: #64748b; }
+  .footer-dev a { color: var(--accent); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-img { height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Energia%20Solar%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20neg%C3%B3cio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    Eco<span>Sun</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#simulador">Simulador</a></li>
+    <li><a href="#beneficios">Benefícios</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Quero%20saber%20mais%20sobre%20energia%20solar" target="_blank" class="btn-nav">Falar com Consultor</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-text">
+    <h1>Economize até <span>95%</span> na sua conta de luz.</h1>
+    <p>Instale energia solar em sua casa ou empresa e pare de se preocupar com os aumentos das tarifas elétricas. Tecnologia limpa e investimento que se paga.</p>
+    <a href="#simulador" class="btn-nav" style="display: inline-block; padding: 16px 35px; font-size: 1.1rem;">Simular Minha Economia</a>
+  </div>
+  <div class="hero-img"></div>
+</header>
+
+<section class="simulador" id="simulador">
+  <h2>Simule sua Economia</h2>
+  <p>Quanto você paga de luz hoje? Descubra seu novo valor.</p>
+  
+  <div class="form-group">
+    <input type="number" id="valorConta" class="input-custom" placeholder="Ex: 500 (Apenas números)" min="100">
+    <button class="btn-simular" onclick="calcularEconomia()">Calcular</button>
+  </div>
+  <p id="resultado" style="margin-top: 25px; font-size: 1.2rem; font-weight: 700; color: var(--primary); display: none;"></p>
+</section>
+
+<section class="beneficios" id="beneficios">
+  <h2 class="section-title">Por que escolher a EcoSun?</h2>
+  <div class="grid-beneficios">
+    <div class="card-beneficio">
+      <div class="icon">💰</div>
+      <h3>Economia Real</h3>
+      <p>Reduza drasticamente seus custos fixos mensais desde o primeiro mês após a instalação.</p>
+    </div>
+    <div class="card-beneficio">
+      <div class="icon">🔋</div>
+      <h3>Alta Durabilidade</h3>
+      <p>Painéis com garantia de 25 anos e manutenção praticamente zero.</p>
+    </div>
+    <div class="card-beneficio">
+      <div class="icon">🌱</div>
+      <h3>Sustentabilidade</h3>
+      <p>Energia 100% limpa e renovável. Valorize seu imóvel e ajude o planeta.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Eco<span>Sun</span></div>
+  <p>Av. do Sol, 1000 - Distrito Tecnológico</p>
+  <p>Atendimento em todo o estado de São Paulo.</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Quero%20saber%20mais%20sobre%20energia%20solar" target="_blank" class="wpp" aria-label="Falar no WhatsApp">✆</a>
+
+<script>
+  function calcularEconomia() {
+    const input = document.getElementById('valorConta');
+    const resultado = document.getElementById('resultado');
+    const valor = parseFloat(input.value);
+
+    if (isNaN(valor) || valor < 100) {
+      alert("Por favor, insira um valor válido (a partir de R$ 100).");
+      return;
+    }
+
+    const economiaMensal = valor * 0.95;
+    const novoValor = valor - economiaMensal;
+
+    resultado.style.display = 'block';
+    resultado.innerHTML = `Sua conta pode cair de R$ ${valor.toFixed(2)} para apenas <span style="color: var(--accent);">R$ ${novoValor.toFixed(2)}</span>.<br><br>
+    <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Simulei%20minha%20conta%20de%20luz%20no%20site%20(no%20valor%20de%20R%24%20${valor.toFixed(2)})%20e%20quero%20economizar%20mais!" target="_blank" class="btn-simular" style="display: inline-block; text-decoration: none; margin-top: 10px;">Quero Economizar no WhatsApp</a>`;
+  }
+</script>
+
+</body>
+</html>

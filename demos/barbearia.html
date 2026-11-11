@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Premium | Estilo e Tradição</title>
+<meta name="description" content="Corte, barba e cuidado masculino em um ambiente premium. Agende seu horário.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --card: #151515;
+    --gold: #d4af37;
+    --gold-hover: #b5952f;
+    --text: #f5f5f5;
+    --gray: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DE DEMONSTRAÇÃO DA NEXO */
+  .nexo-banner { background: var(--gold); color: #000; text-align: center; padding: 8px; font-weight: 600; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: #000; text-decoration: underline; font-weight: 800; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(10,10,10,0.9); position: fixed; width: 100%; top: 33px; z-index: 1000; border-bottom: 1px solid #222; backdrop-filter: blur(10px); }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); letter-spacing: 2px; }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .btn-agendar { background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 10px 25px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+  .btn-agendar:hover { background: var(--gold); color: #000; }
+
+  /* HERO */
+  .hero { height: 100vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1920&auto=format') center/cover; }
+  .hero-content { max-width: 600px; }
+  .hero-sub { color: var(--gold); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; font-size: 0.9rem; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.9; margin-bottom: 25px; }
+  .hero p { color: var(--gray); font-size: 1.1rem; margin-bottom: 40px; max-width: 450px; }
+  .hero .btn-agendar { display: inline-block; padding: 15px 40px; font-size: 1.1rem; }
+
+  /* SEÇÃO SERVIÇOS */
+  .servicos { padding: 100px 5%; background: var(--bg); text-align: center; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--gold); margin-bottom: 10px; letter-spacing: 2px; }
+  .section-desc { color: var(--gray); margin-bottom: 60px; }
+  .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+  .card-servico { background: var(--card); border: 1px solid #222; padding: 40px 30px; text-align: left; transition: transform 0.3s, border-color 0.3s; }
+  .card-servico:hover { transform: translateY(-5px); border-color: var(--gold); }
+  .card-servico h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 10px; }
+  .card-servico p { color: var(--gray); font-size: 0.9rem; margin-bottom: 20px; min-height: 45px; }
+  .preco { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); }
+
+  /* SEÇÃO SOBRE / STATS */
+  .sobre { padding: 100px 5%; background: #111; display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
+  .sobre-img { flex: 1; min-width: 300px; height: 500px; background: url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format') center/cover; border: 1px solid #333; }
+  .sobre-texto { flex: 1; min-width: 300px; }
+  .sobre-texto h2 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; margin-bottom: 20px; letter-spacing: 1px; }
+  .sobre-texto p { color: var(--gray); margin-bottom: 30px; font-size: 1rem; }
+  .stats { display: flex; gap: 40px; border-top: 1px solid #333; padding-top: 30px; }
+  .stat-item h4 { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold); line-height: 1; }
+  .stat-item span { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* FOOTER */
+  footer { background: #050505; padding: 50px 5%; text-align: center; border-top: 1px solid #222; }
+  footer p { color: var(--gray); font-size: 0.9rem; margin-bottom: 15px; }
+  .footer-dev { color: #555; font-size: 0.8rem; }
+  .footer-dev a { color: var(--gold); text-decoration: none; }
+
+  /* WHATSAPP FIXO */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 4rem; }
+    .stats { flex-direction: column; gap: 20px; }
+    .sobre-img { height: 300px; }
+    nav { top: 33px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AVISO DA NEXO DIGITAL -->
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Barbearia%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20neg%C3%B3cio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">Barber Shop</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">A Barbearia</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia" target="_blank" class="btn-agendar">Agendar Horário</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-sub">A experiência definitiva</div>
+    <h1>Premium Barber Shop for a Professional Look</h1>
+    <p>Mais que um corte de cabelo. Uma experiência de cuidado, tradição e estilo em um ambiente feito para o homem moderno.</p>
+    <a href="https://wa.me/5591982201099?text=Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia" target="_blank" class="btn-agendar">Agende seu Horário</a>
+  </div>
+</header>
+
+<section class="servicos" id="servicos">
+  <h2 class="section-title">Nossos Serviços</h2>
+  <p class="section-desc">Qualidade e precisão em cada detalhe.</p>
+  
+  <div class="grid-servicos">
+    <div class="card-servico">
+      <h3>Corte Clássico</h3>
+      <p>Máquina, tesoura e navalha. O clássico que nunca sai de moda.</p>
+      <div class="preco">R$ 45,00</div>
+    </div>
+    <div class="card-servico">
+      <h3>Barba Terapia</h3>
+      <p>Toalha quente, óleos essenciais e alinhamento com navalha.</p>
+      <div class="preco">R$ 35,00</div>
+    </div>
+    <div class="card-servico">
+      <h3>Combo Premium</h3>
+      <p>Corte + Barba + Lavagem com massagem capilar relaxante.</p>
+      <div class="preco">R$ 70,00</div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="sobre-img"></div>
+  <div class="sobre-texto">
+    <h2>A Arte de Bem Servir</h2>
+    <p>Nossa barbearia nasceu para resgatar o verdadeiro valor do atendimento masculino. Com profissionais experientes, ambiente climatizado, café expresso e uma boa conversa, você sai daqui renovado e pronto para os desafios do dia a dia.</p>
+    <div class="stats">
+      <div class="stat-item">
+        <h4>40+</h4>
+        <span>Anos de Experiência</span>
+      </div>
+      <div class="stat-item">
+        <h4>25+</h4>
+        <span>Profissionais</span>
+      </div>
+      <div class="stat-item">
+        <h4>999+</h4>
+        <span>Clientes Satisfeitos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Barber Shop</div>
+  <p>Rua das Palmeiras, 123 - Centro</p>
+  <p>Aberto de Terça a Sábado, das 09h às 20h.</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia" target="_blank" class="wpp" aria-label="Agendar no WhatsApp">
+  ✆
+</a>
+
+</body>
+</html>

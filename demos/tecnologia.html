@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Tech | Soluções Digitais e IA</title>
+<meta name="description" content="Desenvolvimento de software sob medida, Cloud e Inteligência Artificial para escalar o seu negócio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0f19; /* Azul escuro profundo */
+    --surface: #131b2f;
+    --primary: #3b82f6; /* Azul tech */
+    --neon: #06b6d4; /* Ciano neon */
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #1e293b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO */
+  .nexo-banner { background: var(--primary); color: #fff; text-align: center; padding: 8px; font-weight: 500; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: #fff; text-decoration: underline; font-weight: 700; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 33px; z-index: 1000; border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; }
+  .logo-icon { color: var(--neon); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--text); }
+  .btn-nav { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 10px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+  .btn-nav:hover { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); }
+
+  /* HERO */
+  .hero { padding: 180px 5% 100px; text-align: center; position: relative; background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 60%); }
+  .badge { display: inline-block; border: 1px solid rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1); color: var(--neon); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 25px; }
+  .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; max-width: 900px; margin: 0 auto 25px; letter-spacing: -1px; }
+  .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--neon)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px; }
+  .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+  .btn-primario { background: var(--primary); color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.3s; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+  .btn-primario:hover { background: #2563eb; box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); transform: translateY(-2px); }
+  .btn-secundario { background: var(--surface); color: var(--text); padding: 16px 32px; border-radius: 8px; border: 1px solid var(--border); font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.3s; }
+  .btn-secundario:hover { border-color: var(--text-muted); }
+
+  /* MOCKUP DASHBOARD */
+  .dashboard-preview { max-width: 1000px; margin: 60px auto 0; height: 500px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px 16px 0 0; border-bottom: none; box-shadow: 0 -20px 50px rgba(0,0,0,0.3); position: relative; overflow: hidden; display: flex; }
+  .dash-sidebar { width: 250px; border-right: 1px solid var(--border); padding: 20px; display: none; }
+  .dash-content { flex: 1; padding: 30px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format') center top/cover; opacity: 0.8; }
+  /* O fundo do dashboard usa uma imagem de gráficos para simular um software rodando */
+
+  /* SERVIÇOS */
+  .servicos { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+  .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+  .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .card { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 16px; transition: transform 0.3s, border-color 0.3s; }
+  .card:hover { transform: translateY(-5px); border-color: var(--neon); }
+  .icon-box { width: 50px; height: 50px; background: rgba(6, 182, 212, 0.1); color: var(--neon); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+  .card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+  .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+  /* FOOTER */
+  footer { background: #05080f; border-top: 1px solid var(--border); padding: 60px 5% 30px; text-align: center; }
+  footer .logo { justify-content: center; margin-bottom: 20px; }
+  footer p { color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; }
+  .footer-dev { margin-top: 40px; font-size: 0.8rem; color: #475569; }
+  .footer-dev a { color: var(--neon); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (min-width: 768px) {
+    .dash-sidebar { display: block; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links, .btn-nav { display: none; }
+    .hero { padding-top: 140px; }
+    .dashboard-preview { height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Tecnologia%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20neg%C3%B3cio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+    Nexus<span class="logo-icon">Tech</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#solucoes">Soluções</a></li>
+    <li><a href="#empresa">A Empresa</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Gostaria%20de%20falar%20com%20um%20especialista%20da%20NexusTech" target="_blank" class="btn-nav">Falar com TI</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="badge">🚀 Líderes em Transformação Digital</div>
+  <h1>Escalone seu negócio com <span>Software e Inteligência Artificial</span>.</h1>
+  <p>Nós construímos a infraestrutura tecnológica que a sua empresa precisa para crescer rápido, com segurança e automação de processos.</p>
+  <div class="hero-btns">
+    <a href="https://wa.me/5591982201099?text=Quero%20agendar%20uma%20reuni%C3%A3o%20com%20a%20NexusTech" target="_blank" class="btn-primario">Agendar Consultoria</a>
+    <a href="#solucoes" class="btn-secundario">Conhecer Soluções</a>
+  </div>
+
+  <div class="dashboard-preview">
+    <div class="dash-sidebar">
+      <div style="height: 20px; width: 80%; background: var(--border); border-radius: 4px; margin-bottom: 20px;"></div>
+      <div style="height: 10px; width: 60%; background: var(--border); border-radius: 4px; margin-bottom: 15px;"></div>
+      <div style="height: 10px; width: 70%; background: var(--border); border-radius: 4px; margin-bottom: 15px;"></div>
+      <div style="height: 10px; width: 50%; background: var(--primary); border-radius: 4px; margin-bottom: 15px;"></div>
+      <div style="height: 10px; width: 80%; background: var(--border); border-radius: 4px; margin-bottom: 15px;"></div>
+    </div>
+    <div class="dash-content"></div>
+  </div>
+</header>
+
+<section class="servicos" id="solucoes">
+  <h2 class="section-title">Nossas Soluções B2B</h2>
+  <div class="grid-servicos">
+    <div class="card">
+      <div class="icon-box">💻</div>
+      <h3>Desenvolvimento Web</h3>
+      <p>Sistemas web complexos, painéis de controle, APIs robustas e plataformas SaaS construídas sob medida.</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">☁️</div>
+      <h3>Cloud & DevOps</h3>
+      <p>Migração para a nuvem, configuração de servidores, CI/CD e arquitetura focada em alta disponibilidade.</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">🧠</div>
+      <h3>IA & Automação</h3>
+      <p>Implementação de modelos de IA, análise de dados e automação de fluxos de trabalho para reduzir custos.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="empresa">
+  <div class="logo">Nexus<span class="logo-icon">Tech</span></div>
+  <p>Av. Paulista, 1000 - São Paulo, SP</p>
+  <p>comercial@nexustech.com.br | (11) 4000-0000</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Gostaria%20de%20falar%20com%20um%20especialista%20da%20NexusTech" target="_blank" class="wpp" aria-label="Falar no WhatsApp">✆</a>
+
+</body>
+</html>
