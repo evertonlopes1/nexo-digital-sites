@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TruckCenter | Venda e Revenda de Caminhões</title>
+<meta name="description" content="Encontre os melhores caminhões seminovos e novos. Financiamento facilitado e procedência garantida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1a1a1a;
+    --surface: #262626;
+    --primary: #eab308; /* Amarelo industrial */
+    --text: #f8fafc;
+    --text-muted: #a1a1aa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO */
+  .nexo-banner { background: var(--primary); color: #000; text-align: center; padding: 8px; font-weight: 700; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: #000; text-decoration: underline; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 33px; z-index: 1000; border-bottom: 1px solid #333; }
+  .logo { font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+  .logo span { color: var(--primary); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--primary); }
+  .btn-nav { background: var(--primary); color: #000; padding: 12px 25px; font-weight: 700; font-size: 0.9rem; text-decoration: none; text-transform: uppercase; transition: background 0.3s; }
+  .btn-nav:hover { background: #ca8a04; }
+
+  /* HERO */
+  .hero { height: 100vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(90deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.8) 40%, rgba(26,26,26,0.2) 100%), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format') center right/cover; }
+  .hero-content { max-width: 700px; }
+  .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
+  .hero h1 span { color: var(--primary); }
+  .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; max-width: 500px; }
+  .hero .btn-nav { display: inline-block; padding: 16px 40px; font-size: 1.1rem; }
+
+  /* ESTOQUE */
+  .estoque { padding: 100px 5%; background: var(--surface); }
+  .section-title { font-family: 'Oswald', sans-serif; font-size: 2.5rem; text-transform: uppercase; text-align: center; margin-bottom: 10px; }
+  .section-title span { color: var(--primary); }
+  .section-desc { color: var(--text-muted); text-align: center; margin-bottom: 50px; }
+  
+  .grid-estoque { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+  .card-caminhao { background: var(--bg); border: 1px solid #333; transition: transform 0.3s, border-color 0.3s; }
+  .card-caminhao:hover { transform: translateY(-5px); border-color: var(--primary); }
+  .card-img { height: 220px; background-size: cover; background-position: center; }
+  .card-info { padding: 25px; }
+  .card-info h3 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin-bottom: 10px; }
+  .card-tags { display: flex; gap: 10px; margin-bottom: 20px; }
+  .tag { background: #333; color: #ccc; font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; }
+  .card-preco { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+  .btn-card { display: block; width: 100%; text-align: center; background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 12px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: all 0.3s; }
+  .btn-card:hover { background: var(--primary); color: #000; }
+
+  /* FINANCIAMENTO */
+  .financiamento { padding: 80px 5%; text-align: center; background: var(--primary); color: #000; }
+  .financiamento h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 15px; }
+  .financiamento p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 500; }
+  .btn-finance { display: inline-block; background: #000; color: var(--primary); padding: 16px 40px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: background 0.3s; }
+  .btn-finance:hover { background: #222; }
+
+  /* FOOTER */
+  footer { background: #0f0f0f; color: #888; padding: 60px 5% 30px; text-align: center; border-top: 1px solid #333; }
+  footer .logo { justify-content: center; margin-bottom: 20px; }
+  footer p { margin-bottom: 10px; }
+  .footer-dev { margin-top: 40px; font-size: 0.8rem; color: #555; }
+  .footer-dev a { color: var(--primary); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Caminh%C3%B5es%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20minha%20revenda." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">Truck<span>Center</span></div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#estoque">Estoque</a></li>
+    <li><a href="#financiamento">Financiamento</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Vi%20os%20caminh%C3%B5es%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="btn-nav">Falar com Vendedor</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Potência e rentabilidade para o seu <span>negócio</span>.</h1>
+    <p>As melhores oportunidades em caminhões novos e seminovos. Procedência garantida, revisão completa e financiamento facilitado.</p>
+    <a href="#estoque" class="btn-nav">Ver Estoque</a>
+  </div>
+</header>
+
+<section class="estoque" id="estoque">
+  <h2 class="section-title">Nosso <span>Estoque</span></h2>
+  <p class="section-desc">Modelos selecionados e prontos para rodar.</p>
+  
+  <div class="grid-estoque">
+    <div class="card-caminhao">
+      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1586191582156-1a7003f9e13d?q=80&w=800&auto=format');"></div>
+      <div class="card-info">
+        <h3>Scania R450</h3>
+        <div class="card-tags"><span class="tag">2021</span><span class="tag">450.000 km</span><span class="tag">6x2</span></div>
+        <div class="card-preco">R$ 480.000</div>
+        <a href="https://wa.me/5591982201099?text=Tenho%20interesse%20no%20Scania%20R450" target="_blank" class="btn-card">Tenho Interesse</a>
+      </div>
+    </div>
+
+    <div class="card-caminhao">
+      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?q=80&w=800&auto=format');"></div>
+      <div class="card-info">
+        <h3>Volvo FH 540</h3>
+        <div class="card-tags"><span class="tag">2022</span><span class="tag">320.000 km</span><span class="tag">6x4</span></div>
+        <div class="card-preco">R$ 620.000</div>
+        <a href="https://wa.me/5591982201099?text=Tenho%20interesse%20no%20Volvo%20FH%20540" target="_blank" class="btn-card">Tenho Interesse</a>
+      </div>
+    </div>
+
+    <div class="card-caminhao">
+      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format');"></div>
+      <div class="card-info">
+        <h3>Mercedes Actros 2651</h3>
+        <div class="card-tags"><span class="tag">2020</span><span class="tag">510.000 km</span><span class="tag">6x4</span></div>
+        <div class="card-preco">R$ 410.000</div>
+        <a href="https://wa.me/5591982201099?text=Tenho%20interesse%20no%20Mercedes%20Actros" target="_blank" class="btn-card">Tenho Interesse</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="financiamento" id="financiamento">
+  <h2>Realize seu sonho com nossos planos</h2>
+  <p>Trabalhamos com os melhores bancos do mercado. Taxas especiais para PJ e Autônomos.</p>
+  <a href="https://wa.me/5591982201099?text=Gostaria%20de%20simular%20um%20financiamento%20de%20caminh%C3%A3o" target="_blank" class="btn-finance">Simular Financiamento</a>
+</section>
+
+<footer>
+  <div class="logo">Truck<span>Center</span></div>
+  <p>Rodovia BR-101, KM 45 - Pátio do Trevo</p>
+  <p>Segunda a Sexta, das 08h às 18h | Sábado até 12h</p>
+  <p>vendas@truckcenter.com.br | (11) 99999-8888</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20vendedor" target="_blank" class="wpp" aria-label="Falar no WhatsApp">✆</a>
+
+</body>
+</html>
