@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurante Sabor & Arte | Alta Gastronomia</title>
+<meta name="description" content="Desfrute de momentos inesquecíveis com nossa gastronomia exclusiva. Reserve sua mesa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12100E; /* Marrom muito escuro */
+    --card: #1C1916;
+    --gold: #D4AF37;
+    --gold-hover: #F1D570;
+    --text: #FDFBF7;
+    --text-muted: #A69F96;
+    --accent: #4A5D23; /* Verde oliva */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO DIGITAL */
+  .nexo-banner { background: var(--gold); color: #000; text-align: center; padding: 8px; font-weight: 700; font-size: 0.85rem; position: relative; z-index: 9999; font-family: 'Lato', sans-serif; }
+  .nexo-banner a { color: #000; text-decoration: underline; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: rgba(18,16,14,0.95); position: fixed; width: 100%; top: 36px; z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.2); backdrop-filter: blur(10px); }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); font-style: italic; font-weight: 700; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .btn-reserva { background: var(--gold); color: #000; padding: 12px 28px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; text-decoration: none; transition: background 0.3s; }
+  .btn-reserva:hover { background: var(--gold-hover); }
+
+  /* HERO */
+  .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(18,16,14,0.7), rgba(18,16,14,0.9)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format') center/cover; padding: 0 20px; }
+  .hero-content { max-width: 800px; }
+  .hero-sub { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; margin-bottom: 15px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 30px; }
+  .hero h1 span { color: var(--gold); }
+  .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-inline: auto; }
+  .hero .btn-reserva { display: inline-block; padding: 16px 45px; font-size: 1rem; }
+
+  /* SOBRE / EXPERIÊNCIA */
+  .sobre { padding: 120px 5%; display: flex; flex-wrap: wrap; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .sobre-img { flex: 1; min-width: 300px; height: 600px; background: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format') center/cover; border: 2px solid var(--gold); padding: 10px; background-clip: content-box; }
+  .sobre-text { flex: 1; min-width: 300px; }
+  .section-sub { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; margin-bottom: 10px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 25px; line-height: 1.2; }
+  .sobre-text p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; }
+  .assinatura { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); margin-top: 30px; font-style: italic; }
+
+  /* MENU PREVIEW */
+  .menu { padding: 100px 5%; background: var(--card); border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); text-align: center; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1000px; margin: 60px auto 0; text-align: left; }
+  .menu-item { border-bottom: 1px dotted rgba(255,255,255,0.2); padding-bottom: 15px; margin-bottom: 15px; }
+  .menu-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .menu-header h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text); }
+  .menu-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); font-weight: 700; }
+  .menu-desc { color: var(--text-muted); font-size: 0.9rem; }
+  .btn-outline { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 14px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-top: 40px; transition: all 0.3s; }
+  .btn-outline:hover { background: var(--gold); color: #000; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 60px 5%; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+  footer h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
+  footer p { color: var(--text-muted); margin-bottom: 10px; }
+  .footer-dev { margin-top: 40px; font-size: 0.8rem; color: #666; }
+  .footer-dev a { color: var(--gold); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    nav { top: 36px; }
+    .hero h1 { font-size: 3rem; }
+    .sobre-img { height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AVISO DA NEXO DIGITAL -->
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Restaurante%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20neg%C3%B3cio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">Sabor & Arte</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#experiencia">A Experiência</a></li>
+    <li><a href="#menu">Menu</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Gostaria%20de%20fazer%20uma%20reserva%20no%20Restaurante" target="_blank" class="btn-reserva">Reservar Mesa</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-sub">Bem-vindo ao Sabor & Arte</div>
+    <h1>Savor Every Moment <br> With Every <span>Bite</span></h1>
+    <p>Uma jornada gastronômica onde a tradição encontra a inovação. Ingredientes selecionados, ambiente acolhedor e sabores inesquecíveis.</p>
+    <a href="https://wa.me/5591982201099?text=Gostaria%20de%20fazer%20uma%20reserva%20no%20Restaurante" target="_blank" class="btn-reserva">Faça sua Reserva</a>
+  </div>
+</header>
+
+<section class="sobre" id="experiencia">
+  <div class="sobre-img"></div>
+  <div class="sobre-text">
+    <div class="section-sub">Nossa História</div>
+    <h2 class="section-title">A verdadeira arte de bem servir.</h2>
+    <p>Fundado em 2015, o Sabor & Arte nasceu do desejo de criar um espaço onde a alta gastronomia fosse acessível e acolhedora. Nossa cozinha é comandada pelo Chef Ricardo Almeida, que combina técnicas clássicas francesas com os melhores ingredientes regionais brasileiros.</p>
+    <p>Cada prato conta uma história, cada garfada é uma experiência sensorial desenhada para ser memorável.</p>
+    <div class="assinatura">Chef Ricardo Almeida</div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="section-sub">Destaques da Casa</div>
+  <h2 class="section-title">Nosso Menu</h2>
+  
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div class="menu-header"><h4>Risoto de Funghi Secchi</h4><span class="menu-price">R$ 89</span></div>
+      <p class="menu-desc">Arroz arbóreo cremoso, cogumelos funghi secchi, parmesão de longa cura e azeite trufado.</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-header"><h4>Salmão em Crosta de Ervas</h4><span class="menu-price">R$ 115</span></div>
+      <p class="menu-desc">Filé de salmão grelhado com crosta crocante de ervas finas, purê de mandioquinha e aspargos.</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-header"><h4>Filé Mignon ao Molho Madeira</h4><span class="menu-price">R$ 135</span></div>
+      <p class="menu-desc">Medalhões de filé mignon, molho madeira encorpado, batatas rústicas e cebola caramelizada.</p>
+    </div>
+    <div class="menu-item">
+      <div class="menu-header"><h4>Petit Gâteau com Sorvete</h4><span class="menu-price">R$ 45</span></div>
+      <p class="menu-desc">Bolo quente de chocolate belga com recheio cremoso e sorvete artesanal de baunilha.</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5591982201099?text=Gostaria%20de%20ver%20o%20menu%20completo" target="_blank" class="btn-outline">Ver Menu Completo</a>
+</section>
+
+<footer>
+  <h3>Sabor & Arte</h3>
+  <p>Rua dos Pinheiros, 1540 - Jardins, São Paulo - SP</p>
+  <p>Reservas e Pedidos: (11) 99999-9999</p>
+  <p>Terça a Sábado, das 18h às 23h | Domingo, das 12h às 17h</p>
+  
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Gostaria%20de%20fazer%20uma%20reserva%20no%20Restaurante" target="_blank" class="wpp" aria-label="Falar no WhatsApp">
+  ✆
+</a>
+
+</body>
+</html>
