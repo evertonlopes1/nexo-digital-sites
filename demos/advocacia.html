@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almeida & Rocha Advocacia | Excelência Jurídica</title>
+<meta name="description" content="Assessoria jurídica estratégica e personalizada. Defendemos seus direitos com ética e experiência.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa;
+    --navy: #0f172a; /* Azul marinho profundo */
+    --gold: #b45309; /* Dourado bronze */
+    --gold-light: #fef3c7;
+    --text: #334155;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  
+  /* BANNER DA NEXO */
+  .nexo-banner { background: var(--navy); color: #fff; text-align: center; padding: 8px; font-weight: 400; font-size: 0.85rem; position: relative; z-index: 9999; }
+  .nexo-banner a { color: var(--gold-light); text-decoration: underline; font-weight: 600; }
+
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 33px; z-index: 1000; border-bottom: 1px solid #e2e8f0; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+  .logo span { color: var(--gold); font-style: italic; }
+  .nav-links { display: flex; gap: 35px; list-style: none; }
+  .nav-links a { color: var(--navy); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .btn-nav { background: var(--navy); color: #fff; padding: 12px 28px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.3s; }
+  .btn-nav:hover { background: var(--gold); }
+
+  /* HERO */
+  .hero { height: 90vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.7) 50%, rgba(15,23,42,0.2) 100%), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1920&auto=format') center/cover; margin-top: 73px; }
+  .hero-content { max-width: 700px; color: #fff; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 600; }
+  .hero h1 span { color: var(--gold); font-style: italic; }
+  .hero p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 40px; max-width: 500px; border-left: 3px solid var(--gold); padding-left: 20px; }
+  .hero .btn-nav { display: inline-block; padding: 16px 40px; font-size: 1rem; }
+
+  /* ÁREAS DE ATUAÇÃO */
+  .areas { padding: 100px 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 15px; }
+  .section-desc { color: var(--text-muted); margin-bottom: 60px; max-width: 600px; margin-inline: auto; }
+  .grid-areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .card-area { background: #fff; padding: 40px; border: 1px solid #e2e8f0; text-align: left; transition: transform 0.3s, box-shadow 0.3s; border-top: 4px solid var(--navy); }
+  .card-area:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-top-color: var(--gold); }
+  .card-area h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 15px; }
+  .card-area p { color: var(--text-muted); font-size: 0.95rem; }
+
+  /* SOBRE */
+  .sobre { background: var(--navy); color: #fff; padding: 100px 5%; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+  .sobre-text { flex: 1; min-width: 300px; }
+  .sobre-text h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+  .sobre-text h2 span { color: var(--gold); }
+  .sobre-text p { color: #cbd5e1; margin-bottom: 20px; font-size: 1.05rem; }
+  .sobre-img { flex: 1; min-width: 300px; height: 500px; background: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800&auto=format') center/cover; border: 10px solid var(--gold); }
+
+  /* FOOTER */
+  footer { background: #0b1120; color: #94a3b8; padding: 60px 5% 30px; text-align: center; }
+  footer h3 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.8rem; margin-bottom: 20px; }
+  footer p { margin-bottom: 10px; }
+  .footer-dev { margin-top: 40px; font-size: 0.8rem; color: #475569; border-top: 1px solid #1e293b; padding-top: 20px; }
+  .footer-dev a { color: var(--gold); text-decoration: none; }
+
+  /* WHATSAPP */
+  .wpp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+  .wpp:hover { transform: scale(1.1); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero { height: 100vh; background-position: center; }
+    .sobre-img { height: 300px; border-width: 5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nexo-banner">
+  Este é um site modelo. <a href="../index.html">Voltar para Nexo Digital</a> ou <a href="https://wa.me/5591982201099?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Advocacia%20da%20Nexo%20Digital%20e%20quero%20um%20site%20assim%20para%20meu%20escrit%C3%B3rio." target="_blank">Quero um site assim</a>.
+</div>
+
+<nav>
+  <div class="logo">Almeida <span>&</span> Rocha</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#areas">Áreas de Atuação</a></li>
+    <li><a href="#escritorio">O Escritório</a></li>
+  </ul>
+  <a href="https://wa.me/5591982201099?text=Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica" target="_blank" class="btn-nav">Consulta Jurídica</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Defendendo seus direitos com <span>estratégia e excelência</span>.</h1>
+    <p>Assessoria jurídica especializada para proteger o seu patrimônio, a sua família e o seu negócio.</p>
+    <a href="https://wa.me/5591982201099?text=Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica" target="_blank" class="btn-nav">Fale com um Advogado</a>
+  </div>
+</header>
+
+<section class="areas" id="areas">
+  <h2 class="section-title">Áreas de Atuação</h2>
+  <p class="section-desc">Atuamos de forma consultiva e contenciosa nas principais áreas do Direito.</p>
+  
+  <div class="grid-areas">
+    <div class="card-area">
+      <h3>Direito Empresarial</h3>
+      <p>Assessoria completa para empresas, contratos, recuperação judicial e planejamento tributário.</p>
+    </div>
+    <div class="card-area">
+      <h3>Direito Civil e Família</h3>
+      <p>Inventários, divórcios, pensão alimentícia e resolução de conflitos com sensibilidade.</p>
+    </div>
+    <div class="card-area">
+      <h3>Direito Trabalhista</h3>
+      <p>Defesa de empresas em reclamações e consultoria preventiva de riscos trabalhistas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="escritorio">
+  <div class="sobre-text">
+    <h2>Tradição e <span>Inovação</span>.</h2>
+    <p>Com mais de 20 anos de atuação no mercado, o Almeida & Rocha consolidou-se como referência em soluções jurídicas complexas.</p>
+    <p>Nossa equipe é formada por profissionais altamente capacitados que unem a solidez da advocacia tradicional à agilidade que o mundo moderno exige.</p>
+  </div>
+  <div class="sobre-img"></div>
+</section>
+
+<footer>
+  <h3>Almeida & Rocha Advocacia</h3>
+  <p>Av. Faria Lima, 4500 - 12º Andar - Itaim Bibi, São Paulo - SP</p>
+  <p>contato@almeidarocha.adv.br | (11) 3030-4040</p>
+  <div class="footer-dev">
+    Site demonstrativo criado por <a href="../index.html">Nexo Digital</a>.
+  </div>
+</footer>
+
+<a href="https://wa.me/5591982201099?text=Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica" target="_blank" class="wpp" aria-label="Falar no WhatsApp">✆</a>
+
+</body>
+</html>
